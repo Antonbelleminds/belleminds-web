@@ -22,7 +22,7 @@ export function Hero() {
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <motion.div 
         style={{ y, opacity }}
-        className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 dark:from-primary/20 dark:via-accent/10 dark:to-primary/20" 
+        className="absolute inset-0 bg-gradient-to-br from-[#001F1D] to-[#0B0C10]" 
       />
       
       <motion.div
@@ -53,21 +53,19 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6"
+          className="text-4xl md:text-6xl font-bold text-white mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          AI för små företag.
+          En ny typ av plattform – byggd med AI
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-gray-900 dark:text-gray-100 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-[#EAEAEA] mb-12 max-w-3xl mx-auto leading-relaxed"
         >
-          Vi vill skapa en mötesplats för entreprenörer och företagare som vill bli mer effektiva, 
-          vidga sina gränser för vad som är möjligt och våga drömma stort! 
-          Detta genom att inspirera, utmana och visa hur AI kan ge just ditt företag nytt värde.
+          Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – inte bara i molnet, utan med intelligens. Det ska kännas som att du har hela teamet på plats: juridik, relationer, ekonomi och analys – utan att behöva anställa någon.
         </motion.p>
 
         <motion.div
@@ -77,23 +75,23 @@ export function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <motion.button
+            whileHover={{ scale: 1.05, backgroundColor: 'rgb(0 255 198 / 0.9)' }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => {
+              document.getElementById('platform')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="px-8 py-4 bg-accent text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
+          >
+            Utforska plattformen
+          </motion.button>
+          <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={scrollToContact}
-            className="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-full font-semibold text-lg transition-colors shadow-lg"
+            className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold text-lg transition-colors shadow-lg border border-white/20"
           >
             Kontakta oss
           </motion.button>
-          <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="https://www.linkedin.com/company/belleminds/?viewAsMember=true"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-4 bg-accent hover:bg-accent/90 text-gray-900 rounded-full font-semibold text-lg transition-colors shadow-lg"
-          >
-            Följ oss på LinkedIn
-          </motion.a>
         </motion.div>
       </motion.div>
     </section>

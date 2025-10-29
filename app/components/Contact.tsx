@@ -38,13 +38,13 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 px-6">
+    <section id="contact" ref={ref} className="py-20 px-6 bg-[#0B0C10]">
       <div className="max-w-2xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-6 text-center"
+          className="text-3xl md:text-5xl font-bold text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           Hör av dig!
@@ -54,7 +54,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-gray-900 dark:text-gray-100 text-center mb-12"
+          className="text-lg text-[#EAEAEA] text-center mb-12"
         >
           Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi snabbt.
         </motion.p>
@@ -67,8 +67,8 @@ export function Contact() {
           className="space-y-6"
         >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
-              Namn
+            <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
+              Namn *
             </label>
             <input
               type="text"
@@ -76,13 +76,13 @@ export function Contact() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
             />
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
-              E-postadress
+            <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
+              E-postadress *
             </label>
             <input
               type="email"
@@ -90,13 +90,13 @@ export function Contact() {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
             />
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
-              Meddelande
+            <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
+              Meddelande *
             </label>
             <textarea
               id="message"
@@ -104,12 +104,12 @@ export function Contact() {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
             />
           </div>
 
           {/* GDPR Consent */}
-          <div className="bg-accent/10 dark:bg-accent/5 rounded-lg p-4 space-y-3">
+          <div className="bg-gray-800/50 rounded-lg p-4 space-y-3 border border-gray-700">
             <div className="flex items-start gap-3">
               <input
                 type="checkbox"
@@ -117,18 +117,18 @@ export function Contact() {
                 required
                 checked={formData.consent}
                 onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                className="mt-1 w-5 h-5 rounded border-gray-300 text-accent focus:ring-accent focus:ring-2"
+                className="mt-1 w-5 h-5 rounded border-gray-600 text-accent focus:ring-accent focus:ring-2"
               />
-              <label htmlFor="consent" className="text-sm text-gray-900 dark:text-gray-100">
-                Jag godkänner att Belleminds behandlar mina personuppgifter (namn, e-post och meddelande) för att hantera min förfrågan. Data lagras säkert inom EU i max 12 månader. Du kan när som helst begära radering genom att kontakta oss.
+              <label htmlFor="consent" className="text-sm text-white">
+                Jag godkänner att mina uppgifter behandlas enligt GDPR. *
               </label>
             </div>
-            <p className="text-xs text-gray-700 dark:text-gray-300 pl-8">
+            <p className="text-xs text-[#EAEAEA] pl-8">
               Läs mer i vår{' '}
               <button
                 type="button"
                 onClick={() => setPrivacyOpen(true)}
-                className="text-accent hover:underline font-medium"
+                className="text-[#00FFC6] hover:underline font-medium"
               >
                 integritetspolicy
               </button>
@@ -143,7 +143,7 @@ export function Contact() {
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={status === 'sending' || !formData.consent}
-            className="w-full px-8 py-4 bg-primary hover:bg-primary/90 disabled:bg-gray-400 disabled:cursor-not-allowed text-white rounded-full font-semibold text-lg transition-colors shadow-lg"
+            className="w-full px-8 py-4 bg-accent hover:bg-accent/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
             {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
           </motion.button>
@@ -169,8 +169,8 @@ export function Contact() {
           )}
         </motion.form>
 
-        <p className="text-center text-gray-600 dark:text-gray-400 mt-8">
-          E-post: <a href="mailto:info@belleminds.ai" className="text-accent hover:underline">info@belleminds.ai</a>
+        <p className="text-center text-[#EAEAEA] mt-8">
+          E-post: <a href="mailto:info@belleminds.ai" className="text-[#00FFC6] hover:underline">info@belleminds.ai</a>
         </p>
       </div>
     </section>

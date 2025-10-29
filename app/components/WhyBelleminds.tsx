@@ -9,13 +9,13 @@ export function WhyBelleminds() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-white dark:bg-dark-bg">
+    <section id="why" ref={ref} className="py-20 px-6 bg-[#0B0C10]">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-8 text-center"
+          className="text-3xl md:text-5xl font-bold text-white mb-8 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           Varför vi bygger Belleminds
@@ -27,14 +27,14 @@ export function WhyBelleminds() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-center"
         >
-          <p className="text-lg md:text-xl text-gray-900 dark:text-gray-100 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed mb-6">
             Små företag står inför samma utmaningar som stora – men utan samma resurser.
           </p>
-          <p className="text-lg md:text-xl text-gray-900 dark:text-gray-100 leading-relaxed mb-6">
+          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed mb-6">
             Vi tror att framtiden tillhör de som vågar använda AI för att 
             frigöra tid, energi och kreativitet.
           </p>
-          <p className="text-lg md:text-xl text-gray-900 dark:text-gray-100 leading-relaxed">
+          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed">
             Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, 
             konkret och roligt – för dig som vill ta nästa steg.
           </p>

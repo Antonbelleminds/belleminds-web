@@ -1,0 +1,123 @@
+Uppdrag:
+Förbättra och färdigställ Belleminds/NextJsTemplate-sidan enligt följande specifikationer.
+Projektet använder Next.js + Tailwind + Framer Motion. Behåll befintlig struktur och mörkt tema.
+
+🎨 Design och struktur
+
+Tema:
+
+Behåll mörkt läge permanent (#0B0C10 bakgrund, #EAEAEA brödtext, #FFFFFF rubriker).
+
+Ta bort alla ljus/mörk-växlar.
+
+Header:
+
+Transparent bakgrund med lätt blur (backdrop-blur-md).
+
+Ligg ovanpå hero-sektionens gröna gradient (ingen svart övergång).
+
+Navigationslänkar: “Om oss”, “Plattform 2026”, “Teknologi”, “Inspiration”, “Kontakta oss”.
+
+Aktiv länk: accentfärg #00FFC6.
+
+Hero-sektion:
+
+Rubrik: “En ny typ av plattform – byggd med AI”.
+
+Text:
+“Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – inte bara i molnet, utan med intelligens. Det ska kännas som att du har hela teamet på plats: juridik, relationer, ekonomi och analys – utan att behöva anställa någon.”
+
+CTA-knapp: “Utforska plattformen” med hover-effekt (ljusare grön ton).
+
+Bakgrundsgradient: from-[#001F1D] to-[#0B0C10].
+
+Plattform 2026-sektionen:
+
+Tre flikar: Dina AI-resurser, Din AI-agent, Frigör tid.
+
+Lägg till små ikoner vid varje rubrik.
+
+Aktiv flik får accentlinje (#00FFC6) + ljus bakgrund.
+
+Lägg till fade-övergång vid flikbyte (Framer Motion).
+
+Utöka textinnehållet för varje flik med konkreta exempel:
+
+AI-resurser: CRM, e-signering, ekonomi- och analysverktyg.
+
+AI-agent: Personlig assistent som automatiserar uppgifter.
+
+Frigör tid: Automatisering av rutiner, e-post, kundkontakt.
+
+Säkerhet & Efterlevnad:
+
+Byt ut listsymboler mot ikoner (sköld, lås, EU-flagga).
+
+Kortare texter: “AI-Act-klar”, “EU-hostad drift”, “GDPR-granskad 2025”.
+
+Lägg till en kort underrubrik: “Säkerhet och integritet är kärnan i allt vi bygger.”
+
+Inspiration-sektionen:
+
+Ny rubrik: “Inspiration & Lärande”.
+
+Lägg till tre innehållskort (blogg, podd, guide) med CTA “Läs mer”.
+
+LinkedIn-länken ska vara kvar men sekundär.
+
+Kontaktformulär:
+
+Markera obligatoriska fält med *.
+
+Knapp: “Skicka meddelande”.
+
+Lägg till checkbox för samtycke:
+“Jag godkänner att mina uppgifter behandlas enligt GDPR.”
+
+Länk “Läs mer i vår integritetspolicy” ska öppna en modal, inte ny sida.
+
+Integritetspolicy-modal:
+
+Mörk overlay (bg-black/70).
+
+Centerad box med vit text och mörk bakgrund.
+
+Kort policytext (4–5 meningar).
+
+Stängknapp (×) uppe till höger, klick utanför stänger modal.
+
+Footer:
+
+Bakgrund: #060708, textfärg vit/grå.
+
+Vänster: logotyp + “© 2025 Belleminds. Alla rättigheter förbehållna.”
+
+Höger: länkar till Integritetspolicy, Användarvillkor och LinkedIn-ikon.
+
+Responsivitet:
+
+Mobilvy: hamburger-meny för navigation.
+
+Flikar och bilder i Plattform 2026 staplas vertikalt.
+
+⚙️ Tekniska krav
+
+Framer Motion för animationer (fade, transitions).
+
+Tailwind för styling.
+
+All text på svenska.
+
+Modal, GDPR-samtycke och kontaktformulär måste vara fullt funktionella.
+
+Testa i mobil- och desktopvy.
+
+✅ Mål
+
+Efter uppdatering ska sidan:
+
+Vara mörk, konsekvent och modern.
+
+Ha tydliga flikar, CTA:er och GDPR-efterlevnad.
+
+Vara mobiloptimerad och klar för publicering.

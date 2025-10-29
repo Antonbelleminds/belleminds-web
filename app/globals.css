@@ -2,7 +2,7 @@
 
 @theme {
   --color-primary: #004B4F;
-  --color-accent: #5DD0C0;
+  --color-accent: #00FFC6;
   --color-light-bg: #F9FAFB;
   --color-dark-bg: #0B0C10;
 }
@@ -14,7 +14,7 @@
 
 :root.dark {
   --background: #0B0C10;
-  --foreground: #ededed;
+  --foreground: #EAEAEA;
 }
 
 body {
@@ -53,5 +53,13 @@ body {
 }
 
 .hover\:bg-accent\/90:hover {
-  background-color: rgb(93 208 192 / 0.9);
+  background-color: rgb(0 255 198 / 0.9);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF;
+}
+
+p, span, div {
+  color: #EAEAEA;
 }
