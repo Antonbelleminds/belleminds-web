@@ -14,7 +14,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - **Typografi:**
   - Rubriker: Space Grotesk
   - Brödtext: Inter
-- **Tema Toggle:** Ljus/Mörk/Auto med smidig övergång (next-themes)
+- **Tema:** Fast mörkt tema
 
 ### Animationer
 - **Framer Motion:**
@@ -34,10 +34,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 7. **Privacy** – GDPR-modal som öppnas vid klick på "integritetspolicy" i kontaktformuläret, innehåller fullständig information om datahantering, rättigheter och säkerhet
 8. **Inspiration** – Länk till LinkedIn och resurser
 9. **Contact** – GDPR-compliant kontaktformulär med obligatorisk consent checkbox och privacy notice
-10. **Footer** – Vit logotyp, länkar och tema-toggle
+10. **Footer** – Logotyp, kontakt-länk och copyright
 
 ### GDPR & Säkerhet
-- ✅ Inga cookies (endast teknisk tema-cookie)
+- ✅ Inga cookies
 - ✅ Ingen användarspårning eller analytics
 - ✅ Inga tredjepartsskript
 - ✅ All data inom EU (Replit EU, Neon EU-Postgres)

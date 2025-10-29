@@ -82,7 +82,6 @@ export function Privacy({ isOpen, onClose }: PrivacyProps) {
               <ul className="space-y-2 text-gray-900 dark:text-gray-100">
                 <li>✓ Namn och e-postadress (via kontaktformuläret)</li>
                 <li>✓ Meddelanden du skickar till oss</li>
-                <li>✓ Teknisk tema-cookie (ljust/mörkt läge, ingen spårning)</li>
               </ul>
             </div>
 
