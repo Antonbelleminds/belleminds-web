@@ -1,0 +1,210 @@
+# 🧠 Replit AI Builder – Masterprompt
+## Projekt: belleminds-launch-site
+### Stack: Next.js 14 (TypeScript) + Tailwind CSS
+
+Bygg en komplett, GDPR-säker lanseringssida för **Belleminds**, enligt nedan specifikation.  
+Sidan ska vara EU-vänlig, fullt responsiv, snabb, trygg och inspirerande – med nordisk enkelhet och varm tech-ton.  
+Följ struktur, design, färger och texter exakt som anges nedan.  
+Inga hårdkodade värden utanför komponenterna.  
+Förbered koden så att innehållet i framtiden kan läsas från fil eller databas (t.ex. Neon EU-hostad).
+
+---
+
+## 🧩 Struktur
+Skapa följande sektioner som separata React-komponenter:
+1. Header (Hero)  
+2. Varför Belleminds  
+3. Plattformen som kommer 2026  
+4. Hur det funkar  
+5. Tekniken bakom  
+6. Inspiration & resurser  
+7. Kontakt  
+8. Footer  
+
+Implementera även:
+Tema-toggle (ljus/mörk/auto) med smidig övergång
+Subtila fade-in och parallax-animationer
+AI-glow-effekt i hero-sektionen
+GDPR-säker kontaktfunktion
+
+---
+
+## 🎨 Design & layout
+**Färgpalett:**
+Primär: #004B4F
+Accent: #5DD0C0
+Ljus bakgrund: #F9FAFB
+Mörk bakgrund: #0B0C10
+
+**Typsnitt:**
+Rubriker: Space Grotesk
+Brödtext: Inter
+
+**Bildstil:**
+Abstrakta gradientbakgrunder, mjuka ljuseffekter  
+Ingen mänsklig bild – bara former, rörelse och AI-inspirerade ljus  
+
+**Layoutprinciper:**
+Centrerad hero  
+Maxbredd: 1200px  
+Bra spacing, mycket “luft”  
+Känsla: premium, enkel, trygg  
+
+---
+
+## 🦾 Hero / Header
+
+### Innehåll:
+Belleminds logotyp (lägg placeholder: /public/brand/logo.svg)
+Tagline:  
+  **“Icke-mänsklig intelligens för små företag.”**
+Underrubrik:  
+  “Vi vill skapa en mötesplats för entreprenörer och företagare som vill bli mer effektiva, vidga sina gränser för vad som är möjligt och våga drömma stort!  
+  Detta genom att inspirera, utmana och visa hur icke-mänsklig intelligens kan ge just ditt företag nytt värde.”  
+CTA-knappar:  
+  - “Kontakta oss” → scrollar till kontaktsektionen  
+  - “Följ oss på LinkedIn” → öppnar [https://www.linkedin.com/company/belleminds/?viewAsMember=true](https://www.linkedin.com/company/belleminds/?viewAsMember=true)
+
+### Effekt:
+AI-glow i teal/turkos aura runt loggan  
+Bakgrund: mjuk gradient med parallax-rörelse  
+Ljus/mörk tema växlar dynamiskt med toggle uppe till höger  
+
+---
+
+## 💬 Varför vi bygger Belleminds
+Textförslag:
+
+> Små företag står inför samma utmaningar som stora – men utan samma resurser.  
+> Vi tror att framtiden tillhör de som vågar använda icke-mänsklig intelligens för att frigöra tid, energi och kreativitet.  
+> Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, konkret och roligt – för dig som vill ta nästa steg.
+
+Bild/ikon: enkel AI-inspirerad abstrakt grafik.
+
+---
+
+## ⚙️ Plattformen som kommer 2026
+Rubrik: “En ny typ av plattform – byggd på icke-mänsklig intelligens”
+
+Text:
+
+> Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – inte bara i molnet, utan med intelligens.  
+> Det ska kännas som att du har hela teamet på plats: ekonomi, marknad, drift och analys – men utan att behöva anställa någon.
+
+Skapa tre kort (cards):
+**Bellebot** – Din intelligenta assistent för kommunikation och kundkontakt  
+**BelleCRM** – Relationer och insikter, utan krångel  
+**BelleERP** – Företagets motor – från planering till uppföljning  
+
+---
+
+## 🧭 Hur det funkar
+Rubrik: “Tre steg till en smartare vardag”
+
+1. **Utforska** – Lär dig grunderna, hitta inspiration och förstå möjligheterna.  
+2. **Bygg** – Använd våra guider och verktyg för att ta nästa steg.  
+3. **Automatisera** – Låt icke-mänsklig intelligens ta hand om rutinerna, så du kan fokusera på din kärnverksamhet.
+
+Visuellt: använd 3 ikon-block med enkel fade-in.
+
+---
+
+## 🧩 Tekniken bakom
+Rubrik: “Trygg teknik. Nordisk enkelhet.”
+
+Text:
+
+> Belleminds byggs helt inom EU – säkert, snabbt och utan beroende av tredjepartsdata.  
+> All hosting sker via **Replit (EU)** och **Neon (EU-Postgres)**.  
+> Inga cookies, ingen spårning, inga dolda API-nycklar i koden.  
+> Endast transparens, säkerhet och prestanda.
+
+Lista gärna med ikoner:
+✅ EU-hostad infrastruktur  
+✅ HTTPS & Cloudflare skydd  
+✅ Ingen användarspårning  
+✅ Redo för AI-Act 2026  
+
+---
+
+## 💡 Inspiration & resurser
+Rubrik: “Läs, lyssna, inspireras”
+
+Kort text:
+> Följ oss på LinkedIn för artiklar, guider och poddar om hur icke-mänsklig intelligens förändrar småföretagande i grunden.  
+> Vi delar konkreta exempel, verktyg och tankar från verkligheten.
+
+Länk: [https://www.linkedin.com/company/belleminds/?viewAsMember=true](https://www.linkedin.com/company/belleminds/?viewAsMember=true)
+
+---
+
+## ✉️ Kontakt
+Rubrik: “Hör av dig!”
+
+Text:
+> Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi snabbt.
+
+Formulärfält:
+Namn  
+E-postadress  
+Meddelande  
+Skicka-knapp  
+
+Funktion:
+Validera input på klientnivå  
+Skicka data till /api/contact → logga till konsol eller skriv till lokal fil (för v1)  
+E-postadress: info@belleminds.ai  
+
+---
+
+## ⚖️ Footer
+Innehåll:
+Belleminds logotyp (liten)
+Länk till kontaktsektion
+Tema-toggle
+Text: “© 2025 Belleminds. Alla rättigheter förbehållna.”  
+(Plats för framtida integritetslänk)
+
+---
+
+## 🛡️ Säkerhet & GDPR
+Inga tredjepartsskript eller spårning  
+Ingen cookiebanner krävs (endast teknisk temacookie)  
+All data lagras inom EU  
+HTTPS via Cloudflare  
+Förberedd för AI-Act 2026 (transparens & dataskydd)  
+
+---
+
+## 📁 Strukturförslag
+/app
+
+├─ page.tsx
+
+├─ components/
+
+│   ├─ Hero.tsx
+
+│   ├─ WhyBelleminds.tsx
+
+│   ├─ Platform2026.tsx
+
+│   ├─ HowItWorks.tsx
+
+│   ├─ TechBehind.tsx
+
+│   ├─ Inspiration.tsx
+
+│   ├─ Contact.tsx
+
+│   └─ Footer.tsx
+
+├─ styles/
+
+│   └─ globals.css
+
+└─ public/
+
+├─ brand/logo.svg
+
+└─ brand/anim/

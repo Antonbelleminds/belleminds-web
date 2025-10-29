@@ -1,43 +1,119 @@
-# Next.js 14+ Web Application
+# Belleminds – Landing Page
 
-## Overview
-This is a Next.js web application created using the official Next.js template (create-next-app). The project is configured with TypeScript, ESLint, Tailwind CSS, and the App Router.
+## 🧠 Projektöversikt
+Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för icke-mänsklig intelligens för små företag. Byggd med Next.js 14+, TypeScript, Tailwind CSS och Framer Motion.
 
-## Project Setup
-- **Framework**: Next.js 16.0.1 (latest stable)
-- **React Version**: 19.2.0
-- **TypeScript**: Yes
-- **ESLint**: Yes
-- **Tailwind CSS**: Yes (v4)
-- **App Router**: Yes
-- **src directory**: No
-- **Import alias**: No
+## ✅ Implementerade Funktioner
 
-## Configuration
-The application is configured to run in the Replit environment with the following customizations:
+### Design & Tema
+- **Färgpalett:**
+  - Primär: #004B4F
+  - Accent: #5DD0C0
+  - Ljus bakgrund: #F9FAFB
+  - Mörk bakgrund: #0B0C10
+- **Typografi:**
+  - Rubriker: Space Grotesk
+  - Brödtext: Inter
+- **Tema Toggle:** Ljus/Mörk/Auto med smidig övergång (next-themes)
 
-1. **Dev Server**: Configured to bind to `0.0.0.0:5000` to work with Replit's proxy
-2. **Cache Control**: Headers configured to disable caching for proper hot-reload in the Replit iframe
-3. **Allowed Origins**: Configured to allow cross-origin requests from Replit domains
+### Animationer
+- **Framer Motion:**
+  - Fade-in animationer på alla sektioner
+  - Parallax-effekt i Hero-sektionen (bakgrund rör sig långsammare vid scroll)
+  - AI-glow-effekt runt logotypen
+  - Hover- och tap-animationer på knappar
 
-## Running the Application
-The application runs automatically via the configured workflow:
-- Command: `npm run dev -- -H 0.0.0.0 -p 5000`
-- Port: 5000
+### Komponenter
+1. **Hero** – Huvudsektion med logotyp, tagline och CTA-knappar
+2. **WhyBelleminds** – Förklaring av varför Belleminds skapades
+3. **Platform2026** – Tre produktkort: Bellebot, BelleCRM, BelleERP
+4. **HowItWorks** – Tre-stegs guide
+5. **TechBehind** – Teknisk information och GDPR-säkerhet
+6. **Inspiration** – Länk till LinkedIn och resurser
+7. **Contact** – GDPR-säkert kontaktformulär
+8. **Footer** – Logotyp, länkar och tema-toggle
 
-## Project Structure
+### GDPR & Säkerhet
+- ✅ Inga cookies (endast teknisk tema-cookie)
+- ✅ Ingen användarspårning
+- ✅ Inga tredjepartsskript
+- ✅ All data inom EU (Replit EU, Neon EU-Postgres)
+- ✅ HTTPS via Cloudflare
+- ✅ Kontaktformulär loggar endast till konsol (v1)
+
+### Responsivitet
+- Optimerad för mobil (min 360px bredd)
+- Flexibla layouter med CSS Grid och Flexbox
+- Mobilanpassade navigationsknappar
+
+## 📁 Projektstruktur
 ```
 /
-├── app/              # Next.js App Router directory
-│   ├── layout.tsx    # Root layout
-│   ├── page.tsx      # Home page
-│   └── globals.css   # Global styles
-├── public/           # Static assets
-├── next.config.ts    # Next.js configuration
-├── tsconfig.json     # TypeScript configuration
-├── tailwind.config.ts # Tailwind CSS configuration
-└── package.json      # Dependencies and scripts
+├── app/
+│   ├── components/
+│   │   ├── Hero.tsx
+│   │   ├── WhyBelleminds.tsx
+│   │   ├── Platform2026.tsx
+│   │   ├── HowItWorks.tsx
+│   │   ├── TechBehind.tsx
+│   │   ├── Inspiration.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Footer.tsx
+│   │   ├── ThemeProvider.tsx
+│   │   └── ThemeToggle.tsx
+│   ├── api/
+│   │   └── contact/
+│   │       └── route.ts
+│   ├── layout.tsx
+│   ├── page.tsx
+│   └── globals.css
+├── public/
+│   └── brand/
+│       └── logo.png
+├── next.config.ts
+└── package.json
 ```
 
-## Recent Changes
-- **2025-10-29**: Initial Next.js application setup with TypeScript, ESLint, Tailwind CSS, and App Router
+## 🚀 Teknisk Stack
+- **Framework:** Next.js 16.0.1 (App Router)
+- **Språk:** TypeScript
+- **Styling:** Tailwind CSS v4
+- **Animationer:** Framer Motion
+- **Tema:** next-themes
+- **Fonts:** Google Fonts (Space Grotesk + Inter)
+
+## 📝 Metadata
+- **Titel:** "Belleminds – Icke-mänsklig intelligens för små företag"
+- **Språk:** Svenska (sv)
+- **Beskrivning:** SEO-optimerad beskrivning på svenska
+
+## 🔧 Konfiguration
+- **Dev Server:** Binder till 0.0.0.0:5000 för Replit-kompatibilitet
+- **Cache Control:** Inaktiverad för korrekt hot-reload
+- **Allowed Origins:** Konfigurerad för Replit-domäner
+
+## 📊 Status
+- ✅ Alla komponenter implementerade
+- ✅ Framer Motion animationer
+- ✅ Theme toggle fungerar
+- ✅ GDPR-säker
+- ✅ Mobiloptimerad
+- ✅ Production-ready
+
+## 🎯 Nästa Steg (Framtida Utveckling)
+1. Koppla kontaktformulär till e-posttjänst
+2. Lägg till admin-gränssnitt för innehållsredigering
+3. Integrera med Neon EU-databas för formulärdata
+4. Publicera på Cloudflare
+
+## 📅 Projekthistorik
+- **2025-10-29:** Initial implementation av komplett landing page
+  - Alla komponenter skapade
+  - Framer Motion parallax och fade-in animationer
+  - Theme provider och toggle
+  - GDPR-säkert kontaktformulär
+  - Responsiv design
+
+## 👤 Kontakt
+- E-post: info@belleminds.ai
+- LinkedIn: [Belleminds](https://www.linkedin.com/company/belleminds/?viewAsMember=true)
