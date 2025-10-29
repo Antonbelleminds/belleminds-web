@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, email, message, consent } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -12,10 +12,19 @@ export async function POST(request: Request) {
       );
     }
 
+    if (!consent) {
+      return NextResponse.json(
+        { error: 'Consent is required to process your request' },
+        { status: 400 }
+      );
+    }
+
     console.log('Contact form submission:', {
       name,
       email,
       message,
+      consent: true,
+      consentTimestamp: new Date().toISOString(),
       timestamp: new Date().toISOString(),
     });
 
