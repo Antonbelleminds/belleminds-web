@@ -25,14 +25,15 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Interactive image switching med fade/scale transitions i BelleSectionAI
 
 ### Komponenter
-1. **Hero** – Huvudsektion med vit logotyp, tagline "AI för små företag" och CTA-knappar
-2. **WhyBelleminds** – Förklaring av varför Belleminds skapades
-3. **Platform2026** – Rubrik och beskrivning av plattformen som lanseras 2026
-4. **BelleSectionAI** – Interaktiv sektion med tre klickbara boxar (Dina AI-resurser, Din AI-agent, Frigör tid) som byter bilder med Framer Motion animationer
-5. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
-6. **Inspiration** – Länk till LinkedIn och resurser
-7. **Contact** – GDPR-säkert kontaktformulär
-8. **Footer** – Vit logotyp, länkar och tema-toggle
+1. **Header** – Fast navigation i toppen med rundade kanter, logotyp, navigeringslänkar och "Kontakta oss"-knapp
+2. **Hero** – Huvudsektion med vit logotyp, tagline "AI för små företag" och CTA-knappar
+3. **WhyBelleminds** – Förklaring av varför Belleminds skapades
+4. **Platform2026** – Rubrik och beskrivning av plattformen som lanseras 2026
+5. **BelleSectionAI** – Interaktiv sektion med tre klickbara boxar (Dina AI-resurser, Din AI-agent, Frigör tid) som byter bilder med Framer Motion animationer
+6. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
+7. **Inspiration** – Länk till LinkedIn och resurser
+8. **Contact** – GDPR-säkert kontaktformulär
+9. **Footer** – Vit logotyp, länkar och tema-toggle
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies (endast teknisk tema-cookie)
@@ -52,6 +53,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 /
 ├── app/
 │   ├── components/
+│   │   ├── Header.tsx
 │   │   ├── Hero.tsx
 │   │   ├── BelleSectionAI.tsx
 │   │   ├── WhyBelleminds.tsx
