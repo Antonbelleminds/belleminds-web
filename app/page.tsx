@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <BelleSectionAI />
       <WhyBelleminds />
       <Platform2026 />
+      <BelleSectionAI />
       <TechBehind />
       <Inspiration />
       <Contact />

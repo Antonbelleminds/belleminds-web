@@ -26,12 +26,9 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 
 ### Komponenter
 1. **Hero** – Huvudsektion med vit logotyp, tagline "AI för små företag" och CTA-knappar
-2. **BelleSectionAI** – Interaktiv sektion med tre klickbara boxar (Dina AI-resurser, Din AI-agent, Frigör tid) som byter bilder med Framer Motion animationer
-3. **WhyBelleminds** – Förklaring av varför Belleminds skapades
-4. **Platform2026** – Tre produktkort med screenshots (större storlek 64/80px):
-   - **BelleLegal** – Juridik och avtal
-   - **BelleCRM** – Relationer och insikter
-   - **BelleERP** – Planering till uppföljning
+2. **WhyBelleminds** – Förklaring av varför Belleminds skapades
+3. **Platform2026** – Rubrik och beskrivning av plattformen som lanseras 2026
+4. **BelleSectionAI** – Interaktiv sektion med tre klickbara boxar (Dina AI-resurser, Din AI-agent, Frigör tid) som byter bilder med Framer Motion animationer
 5. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
 6. **Inspiration** – Länk till LinkedIn och resurser
 7. **Contact** – GDPR-säkert kontaktformulär
@@ -74,12 +71,9 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 ├── public/
 │   └── brand/
 │       ├── logo.png
-│       ├── legal.png
-│       ├── crm.png
-│       ├── erp.png
-│       ├── ai-resources.png
-│       ├── ai-agent.png
-│       └── free-time.png
+│       ├── ai-resources.png (dashboard laptop)
+│       ├── ai-agent.png (dashboard mobil)
+│       └── free-time.png (kalender)
 ├── next.config.ts
 └── package.json
 ```
@@ -124,7 +118,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Theme provider och toggle
   - GDPR-säkert kontaktformulär
   - Responsiv design
-  - Produktbilder integrerade (BelleLegal, BelleCRM, BelleERP) - storlek ökat till 64/80px
+  - AI-sektionsbilder integrerade (dashboard laptop, mobil, kalender)
   - Vit logotyp (dark:invert för korrekt färg)
   - Förenklad text (AI istället för "icke-mänsklig intelligens")
   - Fixat kontrastproblem (text-black och text-gray-900 på ljusa bakgrunder)
