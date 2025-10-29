@@ -15,30 +15,23 @@ export function WhyBelleminds() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-white mb-8 text-center"
+          className="text-3xl md:text-5xl font-bold text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           Varför vi bygger Belleminds
         </motion.h2>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center"
+          className="text-lg md:text-xl text-[#EAEAEA] text-center max-w-3xl mx-auto leading-relaxed"
         >
-          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed mb-6">
-            Små företag står inför samma utmaningar som stora – men utan samma resurser.
-          </p>
-          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed mb-6">
-            Vi tror att framtiden tillhör de som vågar använda AI för att 
-            frigöra tid, energi och kreativitet.
-          </p>
-          <p className="text-lg md:text-xl text-[#EAEAEA] leading-relaxed">
-            Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, 
-            konkret och roligt – för dig som vill ta nästa steg.
-          </p>
-        </motion.div>
+          Små företag står inför samma utmaningar som stora – men utan samma resurser. 
+          Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. 
+          Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, 
+          konkret och roligt – för dig som vill ta nästa steg.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
