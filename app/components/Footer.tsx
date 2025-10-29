@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-light-bg dark:bg-dark-bg py-12 px-6">
+    <footer className="bg-white dark:bg-dark-bg py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <motion.div 
@@ -22,7 +22,7 @@ export function Footer() {
               alt="Belleminds"
               width={40}
               height={40}
-              className="invert"
+              className="dark:invert"
             />
             <span className="text-lg font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>
               Belleminds

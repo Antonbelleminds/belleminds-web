@@ -45,7 +45,7 @@ export function Hero() {
             height={200}
             priority
             style={{ width: 'auto', height: 'auto' }}
-            className="relative z-10 drop-shadow-2xl invert"
+            className="relative z-10 drop-shadow-2xl dark:invert"
           />
         </motion.div>
 
@@ -53,7 +53,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
+          className="text-4xl md:text-6xl font-bold text-black dark:text-white mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           AI för små företag.
@@ -63,7 +63,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl text-gray-900 dark:text-gray-100 mb-12 max-w-3xl mx-auto leading-relaxed"
         >
           Vi vill skapa en mötesplats för entreprenörer och företagare som vill bli mer effektiva, 
           vidga sina gränser för vad som är möjligt och våga drömma stort! 

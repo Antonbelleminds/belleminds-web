@@ -42,7 +42,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-center"
+          className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           Hör av dig!
@@ -52,7 +52,7 @@ export function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg text-gray-700 dark:text-gray-300 text-center mb-12"
+          className="text-lg text-gray-900 dark:text-gray-100 text-center mb-12"
         >
           Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi snabbt.
         </motion.p>

@@ -9,13 +9,13 @@ export function Inspiration() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-light-bg dark:bg-dark-bg">
+    <section ref={ref} className="py-20 px-6 bg-white dark:bg-dark-bg">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-8"
+          className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-8"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           Läs, lyssna, inspireras
@@ -25,7 +25,7 @@ export function Inspiration() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8"
+          className="text-lg md:text-xl text-gray-900 dark:text-gray-100 leading-relaxed mb-8"
         >
           Följ oss på LinkedIn för artiklar, guider och poddar om hur AI 
           förändrar småföretagande i grunden. Vi delar konkreta exempel, verktyg och tankar från verkligheten.
