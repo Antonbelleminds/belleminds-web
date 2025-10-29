@@ -1,4 +1,5 @@
 import { Hero } from './components/Hero';
+import { BelleSectionAI } from './components/BelleSectionAI';
 import { WhyBelleminds } from './components/WhyBelleminds';
 import { Platform2026 } from './components/Platform2026';
 import { TechBehind } from './components/TechBehind';
@@ -10,6 +11,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <Hero />
+      <BelleSectionAI />
       <WhyBelleminds />
       <Platform2026 />
       <TechBehind />

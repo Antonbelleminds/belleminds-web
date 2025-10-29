@@ -22,18 +22,20 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Parallax-effekt i Hero-sektionen (bakgrund rör sig långsammare vid scroll)
   - AI-glow-effekt runt logotypen
   - Hover- och tap-animationer på knappar
+  - Interactive image switching med fade/scale transitions i BelleSectionAI
 
 ### Komponenter
 1. **Hero** – Huvudsektion med vit logotyp, tagline "AI för små företag" och CTA-knappar
-2. **WhyBelleminds** – Förklaring av varför Belleminds skapades
-3. **Platform2026** – Tre produktkort med screenshots:
+2. **BelleSectionAI** – Interaktiv sektion med tre klickbara boxar (Dina AI-resurser, Din AI-agent, Frigör tid) som byter bilder med Framer Motion animationer
+3. **WhyBelleminds** – Förklaring av varför Belleminds skapades
+4. **Platform2026** – Tre produktkort med screenshots (större storlek 64/80px):
    - **BelleLegal** – Juridik och avtal
    - **BelleCRM** – Relationer och insikter
    - **BelleERP** – Planering till uppföljning
-4. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
-5. **Inspiration** – Länk till LinkedIn och resurser
-6. **Contact** – GDPR-säkert kontaktformulär
-7. **Footer** – Vit logotyp, länkar och tema-toggle
+5. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
+6. **Inspiration** – Länk till LinkedIn och resurser
+7. **Contact** – GDPR-säkert kontaktformulär
+8. **Footer** – Vit logotyp, länkar och tema-toggle
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies (endast teknisk tema-cookie)
@@ -54,6 +56,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 ├── app/
 │   ├── components/
 │   │   ├── Hero.tsx
+│   │   ├── BelleSectionAI.tsx
 │   │   ├── WhyBelleminds.tsx
 │   │   ├── Platform2026.tsx
 │   │   ├── TechBehind.tsx
@@ -73,7 +76,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 │       ├── logo.png
 │       ├── legal.png
 │       ├── crm.png
-│       └── erp.png
+│       ├── erp.png
+│       ├── ai-resources.png
+│       ├── ai-agent.png
+│       └── free-time.png
 ├── next.config.ts
 └── package.json
 ```
@@ -118,9 +124,12 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Theme provider och toggle
   - GDPR-säkert kontaktformulär
   - Responsiv design
-  - Produktbilder integrerade (BelleLegal, BelleCRM, BelleERP)
-  - Vit logotyp
+  - Produktbilder integrerade (BelleLegal, BelleCRM, BelleERP) - storlek ökat till 64/80px
+  - Vit logotyp (dark:invert för korrekt färg)
   - Förenklad text (AI istället för "icke-mänsklig intelligens")
+  - Fixat kontrastproblem (text-black och text-gray-900 på ljusa bakgrunder)
+  - Alla ljusgrå bakgrunder ändrade till ren vit för bättre kontrast
+  - BelleSectionAI sektion tillagd med interaktiv bildväxling
 
 ## 👤 Kontakt
 - E-post: info@belleminds.ai
