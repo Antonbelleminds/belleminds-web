@@ -3,22 +3,23 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const products = [
   {
-    name: 'Bellebot',
-    description: 'Din intelligenta assistent för kommunikation och kundkontakt',
-    icon: '🤖',
+    name: 'BelleLegal',
+    description: 'Din intelligenta assistent för juridik och avtal',
+    image: '/brand/legal.png',
   },
   {
     name: 'BelleCRM',
     description: 'Relationer och insikter, utan krångel',
-    icon: '💼',
+    image: '/brand/crm.png',
   },
   {
     name: 'BelleERP',
     description: 'Företagets motor – från planering till uppföljning',
-    icon: '⚙️',
+    image: '/brand/erp.png',
   },
 ];
 
@@ -36,7 +37,7 @@ export function Platform2026() {
           className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          En ny typ av plattform – byggd på icke-mänsklig intelligens
+          En ny typ av plattform – byggd med AI
         </motion.h2>
 
         <motion.p
@@ -47,7 +48,7 @@ export function Platform2026() {
         >
           Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva 
           ditt företag – inte bara i molnet, utan med intelligens. Det ska kännas som att du har 
-          hela teamet på plats: ekonomi, marknad, drift och analys – men utan att behöva anställa någon.
+          hela teamet på plats: juridik, relationer, ekonomi och analys – men utan att behöva anställa någon.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -59,7 +60,15 @@ export function Platform2026() {
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-shadow"
             >
-              <div className="text-5xl mb-4">{product.icon}</div>
+              <div className="mb-6 relative h-48 w-full">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
+                  className="object-contain"
+                />
+              </div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
                 {product.name}
               </h3>

@@ -1,7 +1,6 @@
 import { Hero } from './components/Hero';
 import { WhyBelleminds } from './components/WhyBelleminds';
 import { Platform2026 } from './components/Platform2026';
-import { HowItWorks } from './components/HowItWorks';
 import { TechBehind } from './components/TechBehind';
 import { Inspiration } from './components/Inspiration';
 import { Contact } from './components/Contact';
@@ -13,7 +12,6 @@ export default function Home() {
       <Hero />
       <WhyBelleminds />
       <Platform2026 />
-      <HowItWorks />
       <TechBehind />
       <Inspiration />
       <Contact />

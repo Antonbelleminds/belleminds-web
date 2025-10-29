@@ -27,7 +27,7 @@ export function Inspiration() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-8"
         >
-          Följ oss på LinkedIn för artiklar, guider och poddar om hur icke-mänsklig intelligens 
+          Följ oss på LinkedIn för artiklar, guider och poddar om hur AI 
           förändrar småföretagande i grunden. Vi delar konkreta exempel, verktyg och tankar från verkligheten.
         </motion.p>
 

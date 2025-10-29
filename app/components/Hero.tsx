@@ -44,7 +44,8 @@ export function Hero() {
             width={200}
             height={200}
             priority
-            className="relative z-10 drop-shadow-2xl"
+            style={{ width: 'auto', height: 'auto' }}
+            className="relative z-10 drop-shadow-2xl invert"
           />
         </motion.div>
 
@@ -55,7 +56,7 @@ export function Hero() {
           className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          Icke-mänsklig intelligens för små företag.
+          AI för små företag.
         </motion.h1>
 
         <motion.p
@@ -66,8 +67,7 @@ export function Hero() {
         >
           Vi vill skapa en mötesplats för entreprenörer och företagare som vill bli mer effektiva, 
           vidga sina gränser för vad som är möjligt och våga drömma stort! 
-          Detta genom att inspirera, utmana och visa hur icke-mänsklig intelligens kan ge just 
-          ditt företag nytt värde.
+          Detta genom att inspirera, utmana och visa hur AI kan ge just ditt företag nytt värde.
         </motion.p>
 
         <motion.div

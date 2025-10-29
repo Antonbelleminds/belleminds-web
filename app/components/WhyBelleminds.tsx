@@ -31,7 +31,7 @@ export function WhyBelleminds() {
             Små företag står inför samma utmaningar som stora – men utan samma resurser.
           </p>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-            Vi tror att framtiden tillhör de som vågar använda icke-mänsklig intelligens för att 
+            Vi tror att framtiden tillhör de som vågar använda AI för att 
             frigöra tid, energi och kreativitet.
           </p>
           <p className="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed">

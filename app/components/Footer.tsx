@@ -22,6 +22,7 @@ export function Footer() {
               alt="Belleminds"
               width={40}
               height={40}
+              className="invert"
             />
             <span className="text-lg font-bold text-gray-900 dark:text-white" style={{ fontFamily: 'var(--font-heading)' }}>
               Belleminds

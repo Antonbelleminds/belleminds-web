@@ -14,9 +14,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Belleminds – Icke-mänsklig intelligens för små företag",
-  description: "Vi skapar en mötesplats för entreprenörer och företagare som vill bli mer effektiva genom icke-mänsklig intelligens. Inspiration, vägledning och mod för små företag.",
-  keywords: ["AI", "Artificiell Intelligens", "Små företag", "Automation", "Belleminds", "Icke-mänsklig intelligens"],
+  title: "Belleminds – AI för små företag",
+  description: "Vi skapar en mötesplats för entreprenörer och företagare som vill bli mer effektiva genom AI. Inspiration, vägledning och mod för små företag.",
+  keywords: ["AI", "Artificiell Intelligens", "Små företag", "Automation", "Belleminds"],
 };
 
 export default function RootLayout({

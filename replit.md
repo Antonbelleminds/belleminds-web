@@ -1,7 +1,7 @@
 # Belleminds – Landing Page
 
 ## 🧠 Projektöversikt
-Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för icke-mänsklig intelligens för små företag. Byggd med Next.js 14+, TypeScript, Tailwind CSS och Framer Motion.
+Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform för små företag. Byggd med Next.js 14+, TypeScript, Tailwind CSS och Framer Motion.
 
 ## ✅ Implementerade Funktioner
 
@@ -24,14 +24,16 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
   - Hover- och tap-animationer på knappar
 
 ### Komponenter
-1. **Hero** – Huvudsektion med logotyp, tagline och CTA-knappar
+1. **Hero** – Huvudsektion med vit logotyp, tagline "AI för små företag" och CTA-knappar
 2. **WhyBelleminds** – Förklaring av varför Belleminds skapades
-3. **Platform2026** – Tre produktkort: Bellebot, BelleCRM, BelleERP
-4. **HowItWorks** – Tre-stegs guide
-5. **TechBehind** – Teknisk information och GDPR-säkerhet
-6. **Inspiration** – Länk till LinkedIn och resurser
-7. **Contact** – GDPR-säkert kontaktformulär
-8. **Footer** – Logotyp, länkar och tema-toggle
+3. **Platform2026** – Tre produktkort med screenshots:
+   - **BelleLegal** – Juridik och avtal
+   - **BelleCRM** – Relationer och insikter
+   - **BelleERP** – Planering till uppföljning
+4. **TechBehind** – GDPR-checkboxar (EU-hostad infrastruktur, HTTPS & Cloudflare, ingen spårning, AI-Act 2026)
+5. **Inspiration** – Länk till LinkedIn och resurser
+6. **Contact** – GDPR-säkert kontaktformulär
+7. **Footer** – Vit logotyp, länkar och tema-toggle
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies (endast teknisk tema-cookie)
@@ -54,7 +56,6 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
 │   │   ├── Hero.tsx
 │   │   ├── WhyBelleminds.tsx
 │   │   ├── Platform2026.tsx
-│   │   ├── HowItWorks.tsx
 │   │   ├── TechBehind.tsx
 │   │   ├── Inspiration.tsx
 │   │   ├── Contact.tsx
@@ -69,7 +70,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
 │   └── globals.css
 ├── public/
 │   └── brand/
-│       └── logo.png
+│       ├── logo.png
+│       ├── legal.png
+│       ├── crm.png
+│       └── erp.png
 ├── next.config.ts
 └── package.json
 ```
@@ -83,7 +87,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
 - **Fonts:** Google Fonts (Space Grotesk + Inter)
 
 ## 📝 Metadata
-- **Titel:** "Belleminds – Icke-mänsklig intelligens för små företag"
+- **Titel:** "Belleminds – AI för små företag"
 - **Språk:** Svenska (sv)
 - **Beskrivning:** SEO-optimerad beskrivning på svenska
 
@@ -94,11 +98,12 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
 
 ## 📊 Status
 - ✅ Alla komponenter implementerade
-- ✅ Framer Motion animationer
+- ✅ Framer Motion animationer med parallax
 - ✅ Theme toggle fungerar
 - ✅ GDPR-säker
 - ✅ Mobiloptimerad
 - ✅ Production-ready
+- ✅ Produktbilder (Legal, CRM, ERP) integrerade
 
 ## 🎯 Nästa Steg (Framtida Utveckling)
 1. Koppla kontaktformulär till e-posttjänst
@@ -113,6 +118,9 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en plattform för i
   - Theme provider och toggle
   - GDPR-säkert kontaktformulär
   - Responsiv design
+  - Produktbilder integrerade (BelleLegal, BelleCRM, BelleERP)
+  - Vit logotyp
+  - Förenklad text (AI istället för "icke-mänsklig intelligens")
 
 ## 👤 Kontakt
 - E-post: info@belleminds.ai
