@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { query } from '@/lib/db';
 import { initDatabase } from '@/lib/init-db';
+import { getUncachableResendClient } from '@/lib/resend-client';
 
 let dbInitialized = false;
 
@@ -56,6 +57,31 @@ export async function POST(request: Request) {
       timestamp: result.rows[0].created_at,
       consentGiven: consent,
     });
+
+    try {
+      const { client, fromEmail } = await getUncachableResendClient();
+      
+      await client.emails.send({
+        from: fromEmail,
+        to: 'info@belleminds.ai',
+        subject: `Nytt kontaktformulär från ${name}`,
+        html: `
+          <h2>Nytt meddelande från kontaktformuläret</h2>
+          <p><strong>Namn:</strong> ${name}</p>
+          <p><strong>E-post:</strong> ${email}</p>
+          ${company ? `<p><strong>Företag:</strong> ${company}</p>` : ''}
+          <p><strong>Meddelande:</strong></p>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p style="color: #666; font-size: 12px;">Skickat från belleminds.ai kontaktformulär</p>
+          <p style="color: #666; font-size: 12px;">Submission ID: ${result.rows[0].id}</p>
+        `,
+      });
+
+      console.log('Email sent successfully to info@belleminds.ai');
+    } catch (emailError) {
+      console.error('Failed to send email via Resend:', emailError);
+    }
 
     return NextResponse.json(
       { 

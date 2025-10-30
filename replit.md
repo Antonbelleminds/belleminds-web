@@ -135,12 +135,24 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - ✅ Kontaktformulär sparar data säkert med TLS-kryptering
 
 ## 🎯 Nästa Steg (Framtida Utveckling)
-1. Koppla kontaktformulär till e-posttjänst (t.ex. SendGrid eller Resend)
-2. Lägg till admin-gränssnitt för att visa och hantera kontaktförfrågningar
-3. Implementera automatisk dataradering efter 12 månader (GDPR)
-4. Publicera på Cloudflare
+1. Lägg till admin-gränssnitt för att visa och hantera kontaktförfrågningar
+2. Implementera automatisk dataradering efter 12 månader (GDPR)
+3. Publicera på Cloudflare
 
 ## 📅 Projekthistorik
+- **2025-10-30:** E-postintegration och deployment-konfiguration
+  - **E-postintegration:**
+    * Integrerat Resend för att skicka kontaktformulär via e-post till info@belleminds.ai
+    * Skapat resend-client.ts med säker hantering av API-nycklar via Replit Connectors
+    * Kontaktformuläret sparar nu både i databas OCH skickar e-post (dubbel säkerhet)
+    * E-postmeddelanden innehåller alla formulärfält + submission ID
+  - **Deployment-konfiguration:**
+    * Konfigurerat production build med `npm run build` och `npm run start`
+    * Uppdaterat start-script för att binda till 0.0.0.0:5000 i produktion
+    * Autoscale deployment konfigurerad och redo för publicering
+  - **UI-förbättring:**
+    * Lagt till "belleminds"-text bredvid logotypen i header (samma font som footer)
+
 - **2025-10-30:** Innehållsuppdateringar och UX-förbättringar
   - **Innehållsändringar:**
     * Platform 2026-texten uppdaterad: ny beskrivning fokuserar på AI som tänker, planerar och agerar med dig
