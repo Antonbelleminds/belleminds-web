@@ -92,10 +92,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 │   └── init-db.ts (Database initialization)
 ├── public/
 │   └── brand/
-│       ├── logo.png
-│       ├── ai-resources.png (dashboard laptop)
-│       ├── ai-agent.png (dashboard mobil)
-│       └── free-time.png (kalender)
+│       ├── logo.png (Belleminds logotyp)
+│       ├── ai-resources.png (laptop med dashboard - rosa/lila färger, 948KB)
+│       ├── ai-agent.png (tablet med task management - mörk sidebar, 795KB)
+│       └── free-time.png (mobil med kalender - färgglada schemablock, 889KB)
 ├── next.config.ts
 └── package.json
 ```
@@ -154,6 +154,11 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
     * Skapat ny Terms.tsx-komponent med fullständiga ansvarsbegränsningar
     * Ändrat "Användarvillkor" till "Ansvarsbegränsningar" i Footer
     * 8 sektioner med tydliga begränsningar av ansvar och tredjepartsintegrationer
+  - **Bilduppdateringar:**
+    * Bytt ut alla tre bilder i Platform-sektionen (BelleSectionAI)
+    * Nya högkvalitativa bilder: laptop dashboard (948KB), tablet task view (795KB), mobil kalender (889KB)
+    * Logotyp ljusare med CSS filter: invert(1) brightness(1.8) i Hero, Header och Footer
+    * Raderat gamla oanvända bilder (crm.png, erp.png, legal.png)
   - **Buggfixar:**
     * Fixat text-spacing i WhyBelleminds-sektionen
     * Fixat "vit blinkning" vid HMR/Fast Refresh genom inline critical CSS
