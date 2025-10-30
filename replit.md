@@ -117,6 +117,8 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 
 ## 🔧 Konfiguration
 - **Dev Server:** Binder till 0.0.0.0:5000 för Replit-kompatibilitet
+- **Production Server:** Next.js start-script konfigurerad för 0.0.0.0:5000
+- **Deployment:** Autoscale deployment med build command (npm run build) och run command (npm run start)
 - **Cache Control:** Inaktiverad för korrekt hot-reload
 - **Allowed Origins:** Konfigurerad för Replit-domäner
 

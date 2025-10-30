@@ -32,3 +32,8 @@ externalPort = 80
 
 [nix]
 channel = "stable-25_05"
+
+[deployment]
+run = ["npm", "run", "start"]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
