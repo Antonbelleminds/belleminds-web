@@ -8,7 +8,7 @@ import { Privacy } from './Privacy';
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [formData, setFormData] = useState({ name: '', email: '', message: '', consent: false });
+  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '', consent: false });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [privacyOpen, setPrivacyOpen] = useState(false);
 
@@ -25,9 +25,11 @@ export function Contact() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', message: '', consent: false });
+        setFormData({ name: '', email: '', company: '', message: '', consent: false });
         setTimeout(() => setStatus('idle'), 5000);
       } else {
+        const errorData = await response.json();
+        console.error('Form submission error:', errorData);
         setStatus('error');
         setTimeout(() => setStatus('idle'), 5000);
       }
@@ -90,6 +92,19 @@ export function Contact() {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
+              Företag
+            </label>
+            <input
+              type="text"
+              id="company"
+              value={formData.company}
+              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
               className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
             />
           </div>

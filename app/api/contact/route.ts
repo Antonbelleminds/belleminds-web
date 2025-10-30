@@ -53,8 +53,6 @@ export async function POST(request: Request) {
 
     console.log('Contact form submitted to EU database (Azure Frankfurt):', {
       id: result.rows[0].id,
-      name,
-      email,
       timestamp: result.rows[0].created_at,
       consentGiven: consent,
     });

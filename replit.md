@@ -35,15 +35,16 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 6. **TechBehind** – Säkerhet & Efterlevnad (id="tech"), ikoner istället för checkboxar, 6 features (AI-Act-klar, EU-hostad drift, GDPR-granskad 2025, HTTPS & DDoS-skydd, Ingen spårning, Zero cookies), underrubrik "Säkerhet och integritet är kärnan i allt vi bygger"
 7. **Privacy** – Kompakt GDPR-modal med mörk overlay (bg-black/70), mörk bakgrund (gray-900), kortare policytext (4-5 stycken), stängknapp (×) uppe till höger
 8. **Inspiration** – Ny rubrik "Inspiration & Lärande" (id="inspiration"), tre innehållskort (Blogg, Podd, Guide) med ikoner och "Läs mer"-CTA, sekundär LinkedIn-länk
-9. **Contact** – GDPR-compliant formulär (id="contact"), obligatoriska fält markerade med *, knapptext "Skicka meddelande", förenklad consent-text "Jag godkänner att mina uppgifter behandlas enligt GDPR. *", klickbar integritetspolicy-länk som öppnar modal
+9. **Contact** – GDPR-compliant formulär (id="contact"), fält: Namn*, E-post*, Företag (frivilligt), Meddelande*, consent checkbox*, knapptext "Skicka meddelande", data sparas i Neon PostgreSQL (Azure Frankfurt)
 10. **Footer** – Mörk bakgrund (#060708), logotyp + copyright vänster, länkar till höger (Integritetspolicy, Användarvillkor, LinkedIn-ikon med text)
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies
 - ✅ Ingen användarspårning eller analytics
 - ✅ Inga tredjepartsskript
-- ✅ All data inom EU (Replit EU, Neon EU-Postgres)
+- ✅ All data inom EU (Replit EU, Neon Azure Frankfurt)
 - ✅ HTTPS via Cloudflare med DDoS-skydd
+- ✅ TLS-kryptering aktiverad för databasanslutning (ssl: true)
 - ✅ Kontaktformulär med obligatorisk consent checkbox
 - ✅ Fullständig integritetspolicy i popup-modal
 - ✅ Tydlig information om datahantering (12 månaders lagring)
@@ -53,6 +54,8 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - ✅ Klickbar länk som öppnar privacy policy i modal
 - ✅ Formulär kan inte skickas utan godkännande (frontend + backend)
 - ✅ Backend validerar consent och loggar consent-tidsstämpel
+- ✅ PII-data loggas inte i serverloggar (endast submission ID)
+- ✅ Kontaktformulärdata sparas i Neon PostgreSQL (Azure Frankfurt)
 
 ### Responsivitet
 - Optimerad för mobil (min 360px bredd)
@@ -82,6 +85,9 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 │   ├── layout.tsx
 │   ├── page.tsx
 │   └── globals.css
+├── lib/
+│   ├── db.ts (PostgreSQL connection pooling)
+│   └── init-db.ts (Database initialization)
 ├── public/
 │   └── brand/
 │       ├── logo.png
@@ -99,6 +105,8 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - **Animationer:** Framer Motion
 - **Tema:** next-themes
 - **Fonts:** Google Fonts (Space Grotesk + Inter)
+- **Databas:** Neon PostgreSQL (Azure Frankfurt, EU) med pg client
+- **Connection Pooling:** pg.Pool för optimal databasanslutning
 
 ## 📝 Metadata
 - **Titel:** "Belleminds – AI för små företag"
@@ -119,19 +127,31 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - ✅ Production-ready
 - ✅ Sticky header med glassmorphism
 - ✅ AI-sektionsbilder integrerade (dashboard laptop, mobil, kalender)
+- ✅ Neon PostgreSQL databas integrerad (Azure Frankfurt, EU)
+- ✅ Kontaktformulär sparar data säkert med TLS-kryptering
 
 ## 🎯 Nästa Steg (Framtida Utveckling)
-1. Koppla kontaktformulär till e-posttjänst
-2. Lägg till admin-gränssnitt för innehållsredigering
-3. Integrera med Neon EU-databas för formulärdata
+1. Koppla kontaktformulär till e-posttjänst (t.ex. SendGrid eller Resend)
+2. Lägg till admin-gränssnitt för att visa och hantera kontaktförfrågningar
+3. Implementera automatisk dataradering efter 12 månader (GDPR)
 4. Publicera på Cloudflare
 
 ## 📅 Projekthistorik
-- **2025-10-30:** Buggfixar och förbättringar
-  - Fixat text-spacing i WhyBelleminds-sektionen (konsekvent med resten av sidan)
-  - Fixat "vit blinkning" vid HMR/Fast Refresh genom inline critical CSS
-  - Tog bort CSS-transition som orsakade fade-in effekt
-  - Lagt till !important inline styles för att förhindra vit flash under dev hot reloads
+- **2025-10-30:** Neon PostgreSQL integration och säkerhetsförbättringar
+  - **Databasintegration:**
+    * Integrerat Neon PostgreSQL (Azure Frankfurt) för EU-compliant datalagring
+    * Skapat contact_submissions-tabell med GDPR-fält (consent, consent_timestamp, ip_address, user_agent)
+    * Implementerat connection pooling med pg.Pool
+    * TLS-kryptering aktiverad för säker dataöverföring (ssl: true)
+    * PII-data tas bort från serverloggar (endast submission ID loggas)
+  - **Kontaktformulär:**
+    * Lagt till företagsfält (frivilligt)
+    * Backend validerar consent och sparar data i EU-databasen
+    * Felhantering på både frontend och backend
+  - **Buggfixar:**
+    * Fixat text-spacing i WhyBelleminds-sektionen
+    * Fixat "vit blinkning" vid HMR/Fast Refresh genom inline critical CSS
+    * Triple-redundancy dark mode protection (CSS ::before, MutationObserver, setInterval)
 
 - **2025-10-29:** Initial implementation och stor uppdatering
   - **Initial implementation:**
