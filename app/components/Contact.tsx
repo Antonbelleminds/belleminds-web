@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { Privacy } from './Privacy';
+import { content } from '@/lib/content';
 
 export function Contact() {
   const ref = useRef(null);
@@ -49,7 +50,7 @@ export function Contact() {
           className="text-3xl md:text-5xl font-bold text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          Hör av dig!
+          {content.contact.title}
         </motion.h2>
 
         <motion.p
@@ -58,7 +59,7 @@ export function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg text-[#EAEAEA] text-center mb-12"
         >
-          Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi snabbt.
+          {content.contact.subtitle}
         </motion.p>
 
         <motion.form
@@ -70,7 +71,7 @@ export function Contact() {
         >
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-              Namn *
+              {content.contact.form.nameLabel}
             </label>
             <input
               type="text"
@@ -84,7 +85,7 @@ export function Contact() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-              E-postadress *
+              {content.contact.form.emailLabel}
             </label>
             <input
               type="email"
@@ -98,7 +99,7 @@ export function Contact() {
 
           <div>
             <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
-              Företag
+              {content.contact.form.companyLabel}
             </label>
             <input
               type="text"
@@ -111,7 +112,7 @@ export function Contact() {
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-              Meddelande *
+              {content.contact.form.messageLabel}
             </label>
             <textarea
               id="message"
@@ -135,7 +136,7 @@ export function Contact() {
                 className="mt-1 w-5 h-5 rounded border-gray-600 text-accent focus:ring-accent focus:ring-2"
               />
               <label htmlFor="consent" className="text-sm text-white">
-                Jag godkänner att mina uppgifter behandlas enligt GDPR. *
+                {content.contact.form.consentLabel}
               </label>
             </div>
             <p className="text-xs text-[#EAEAEA] pl-8">
@@ -145,9 +146,9 @@ export function Contact() {
                 onClick={() => setPrivacyOpen(true)}
                 className="text-[#00FFC6] hover:underline font-medium"
               >
-                integritetspolicy
+                {content.contact.form.privacyLinkText}
               </button>
-              . Vi delar aldrig din data med tredje part.
+              . {content.contact.form.consentText}
             </p>
           </div>
           
@@ -160,7 +161,7 @@ export function Contact() {
             disabled={status === 'sending' || !formData.consent}
             className="w-full px-8 py-4 bg-accent hover:bg-accent/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
-            {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
+            {status === 'sending' ? content.contact.form.sendingButton : content.contact.form.submitButton}
           </motion.button>
 
           {status === 'success' && (
@@ -169,7 +170,7 @@ export function Contact() {
               animate={{ opacity: 1 }}
               className="text-green-600 dark:text-green-400 text-center"
             >
-              Tack för ditt meddelande! Vi återkommer snart.
+              {content.contact.form.successMessage}
             </motion.p>
           )}
 
@@ -179,13 +180,13 @@ export function Contact() {
               animate={{ opacity: 1 }}
               className="text-red-600 dark:text-red-400 text-center"
             >
-              Något gick fel. Försök igen eller maila oss direkt på info@belleminds.ai
+              {content.contact.form.errorMessage}
             </motion.p>
           )}
         </motion.form>
 
         <p className="text-center text-[#EAEAEA] mt-8">
-          E-post: <a href="mailto:info@belleminds.ai" className="text-[#00FFC6] hover:underline">info@belleminds.ai</a>
+          {content.contact.directContact.label} <a href={`mailto:${content.contact.directContact.email}`} className="text-[#00FFC6] hover:underline">{content.contact.directContact.email}</a>
         </p>
       </div>
     </section>

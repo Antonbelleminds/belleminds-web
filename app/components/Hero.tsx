@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import { content } from '@/lib/content';
 
 export function Hero() {
   const ref = useRef(null);
@@ -56,7 +57,7 @@ export function Hero() {
           className="text-4xl md:text-6xl font-bold text-white mb-12"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          En ny typ av plattform – byggd med AI
+          {content.hero.title}
         </motion.h1>
 
         <motion.div
@@ -73,7 +74,7 @@ export function Hero() {
             }}
             className="px-8 py-4 bg-accent text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
-            Utforska plattformen
+            {content.hero.primaryButton}
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -81,7 +82,7 @@ export function Hero() {
             onClick={scrollToContact}
             className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-semibold text-lg transition-colors shadow-lg border border-white/20"
           >
-            Kontakta oss
+            {content.hero.secondaryButton}
           </motion.button>
         </motion.div>
       </motion.div>

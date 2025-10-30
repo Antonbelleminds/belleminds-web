@@ -3,25 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-
-const securityItems = [
-  {
-    title: 'GDPR-klar',
-    description: 'Vi designar alla tjänster för att uppfylla EU:s dataskyddsförordning. Användaren äger alltid sitt eget data.',
-  },
-  {
-    title: 'EU-hostad drift',
-    description: 'All lagring och drift sker på servrar inom EU. Vi använder certifierade molntjänster med högsta säkerhetsnivå.',
-  },
-  {
-    title: 'Säker kommunikation',
-    description: 'All datatrafik är krypterad från början till slut. OAuth 2.0 och moderna autentiseringsprotokoll skyddar varje anslutning.',
-  },
-  {
-    title: 'Dataintegritet',
-    description: 'Vi garanterar att din information är korrekt, skyddad och oförändrad. Endast auktoriserade system och användare har åtkomst till dina resurser.',
-  },
-];
+import { content } from '@/lib/content';
 
 export function TechBehind() {
   const ref = useRef(null);
@@ -37,7 +19,7 @@ export function TechBehind() {
           className="text-3xl md:text-5xl font-bold text-white mb-4 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          Säkerhet & Efterlevnad
+          {content.techBehind.title}
         </motion.h2>
         
         <motion.p
@@ -46,7 +28,7 @@ export function TechBehind() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-[#EAEAEA] text-center mb-12 text-lg"
         >
-          Säkerhet och integritet är kärnan i allt vi bygger.
+          {content.techBehind.subtitle}
         </motion.p>
         
         <motion.div
@@ -55,7 +37,7 @@ export function TechBehind() {
           transition={{ duration: 0.6 }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-6"
         >
-          {securityItems.map((item, index) => (
+          {content.techBehind.items.map((item, index) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, scale: 0.9 }}

@@ -3,13 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-
-const navItems = [
-  { name: 'Om oss', href: '#why' },
-  { name: 'Plattform 2026', href: '#platform' },
-  { name: 'Säkerhet', href: '#tech' },
-  { name: 'Inspiration', href: '#inspiration' },
-];
+import { content } from '@/lib/content';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,7 +15,7 @@ export function Header() {
       setIsScrolled(window.scrollY > 20);
       
       // Detect active section
-      const sections = navItems.map(item => item.href.substring(1));
+      const sections = content.header.navigation.map(item => item.href.substring(1));
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -86,13 +80,13 @@ export function Header() {
                 />
               </div>
               <span className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
-                belleminds
+                {content.header.brandName}
               </span>
             </motion.a>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center gap-8">
-              {navItems.map((item) => (
+              {content.header.navigation.map((item) => (
                 <motion.a
                   key={item.name}
                   href={item.href}
@@ -122,7 +116,7 @@ export function Header() {
                 className="hidden md:block bg-accent text-dark-bg px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
-                Kontakta oss
+                {content.header.ctaButton}
               </motion.button>
 
               {/* Mobile Menu Button */}
@@ -161,7 +155,7 @@ export function Header() {
                 className="md:hidden overflow-hidden border-t border-gray-700"
               >
                 <nav className="px-6 py-4 space-y-3">
-                  {navItems.map((item) => (
+                  {content.header.navigation.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -184,7 +178,7 @@ export function Header() {
                     className="w-full bg-accent text-dark-bg px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
-                    Kontakta oss
+                    {content.header.ctaButton}
                   </button>
                 </nav>
               </motion.div>

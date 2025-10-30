@@ -3,45 +3,30 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image from 'next/image';
+import { content } from '@/lib/content';
 
-const sections = [
-  {
-    id: 'resources',
-    title: 'Dina AI-resurser',
-    image: '/brand/ai-resources.png',
-    heading: 'Allt du behöver, samlat på ett ställe.',
-    description: 'Få tillgång till alla dina AI-verktyg och resurser i en gemensam plattform. CRM för att hålla koll på dina kunder, e-signering för snabba avtal, samt ekonomi- och analysverktyg som ger dig full översikt. Sömlös integration med dina befintliga system.',
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-      </svg>
-    ),
-  },
-  {
-    id: 'agent',
-    title: 'Din AI-agent',
-    image: '/brand/ai-agent.png',
-    heading: 'Din personliga assistent som jobbar för dig.',
-    description: 'En intelligent agent som fungerar som din personliga assistent. Automatiserar rutinuppgifter, sammanställer rapporter, svarar på kundfrågor och analyserar data. Lär sig kontinuerligt från ditt företag och anpassar sig efter dina behov. Alltid tillgänglig, alltid uppdaterad.',
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    ),
-  },
-  {
-    id: 'time',
-    title: 'Frigör tid',
-    image: '/brand/free-time.png',
-    heading: 'Fokusera på det som verkligen spelar roll.',
-    description: 'Automatisera rutinuppgifter som schemaläggning, e-posthantering och kunduppföljning. AI:n hanterar administration, fakturering och påminnelser åt dig. Frigör värdefull tid för strategiskt arbete, affärsutveckling och de beslut som driver ditt företag framåt.',
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-];
+const icons = {
+  resources: (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+    </svg>
+  ),
+  agent: (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  ),
+  time: (
+    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+};
+
+const sections = content.belleSectionAI.tabs.map(tab => ({
+  ...tab,
+  icon: icons[tab.id as keyof typeof icons],
+}));
 
 export function BelleSectionAI() {
   const [activeSection, setActiveSection] = useState(0);

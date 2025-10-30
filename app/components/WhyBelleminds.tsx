@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import { content } from '@/lib/content';
 
 export function WhyBelleminds() {
   const ref = useRef(null);
@@ -18,7 +19,7 @@ export function WhyBelleminds() {
           className="text-3xl md:text-5xl font-bold text-white mb-6 text-center"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
-          Varför vi bygger Belleminds
+          {content.whyBelleminds.title}
         </motion.h2>
 
         <motion.p
@@ -27,10 +28,7 @@ export function WhyBelleminds() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-[#EAEAEA] text-center max-w-3xl mx-auto leading-relaxed"
         >
-          Små företag står inför samma utmaningar som stora – men utan samma resurser. 
-          Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. 
-          Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, 
-          konkret och roligt – för dig som vill ta nästa steg.
+          {content.whyBelleminds.description}
         </motion.p>
       </div>
     </section>
