@@ -28,7 +28,29 @@ export default function RootLayout({
     <html lang="sv" className="dark" style={{ background: '#0B0C10', color: '#EAEAEA' }}>
       <head>
         <style id="critical-theme" dangerouslySetInnerHTML={{
-          __html: `html,body{background:#0B0C10!important;color:#EAEAEA!important;margin:0;padding:0}`
+          __html: `
+            html,body{background:#0B0C10!important;color:#EAEAEA!important;margin:0;padding:0}
+            html::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:#0B0C10;z-index:-1}
+          `
+        }} />
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              const forceTheme = () => {
+                document.documentElement.style.background = '#0B0C10';
+                document.documentElement.style.color = '#EAEAEA';
+                document.body.style.background = '#0B0C10';
+                document.body.style.color = '#EAEAEA';
+              };
+              forceTheme();
+              if (typeof window !== 'undefined') {
+                const observer = new MutationObserver(forceTheme);
+                observer.observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class'] });
+                observer.observe(document.body, { attributes: true, attributeFilter: ['style', 'class'] });
+                setInterval(forceTheme, 100);
+              }
+            })();
+          `
         }} />
       </head>
       <body
