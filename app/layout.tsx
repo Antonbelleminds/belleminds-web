@@ -25,9 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv" className="dark">
+    <html lang="sv" className="dark" style={{ background: '#0B0C10', color: '#EAEAEA' }}>
+      <head>
+        <style id="critical-theme" dangerouslySetInnerHTML={{
+          __html: `html,body{background:#0B0C10!important;color:#EAEAEA!important;margin:0;padding:0}`
+        }} />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} font-body antialiased`}
+        style={{ background: '#0B0C10', color: '#EAEAEA' }}
       >
         <Header />
         {children}

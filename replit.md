@@ -127,6 +127,12 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 4. Publicera på Cloudflare
 
 ## 📅 Projekthistorik
+- **2025-10-30:** Buggfixar och förbättringar
+  - Fixat text-spacing i WhyBelleminds-sektionen (konsekvent med resten av sidan)
+  - Fixat "vit blinkning" vid HMR/Fast Refresh genom inline critical CSS
+  - Tog bort CSS-transition som orsakade fade-in effekt
+  - Lagt till !important inline styles för att förhindra vit flash under dev hot reloads
+
 - **2025-10-29:** Initial implementation och stor uppdatering
   - **Initial implementation:**
     * Alla komponenter skapade
@@ -146,7 +152,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
     * **Privacy Modal:** Mörk overlay (bg-black/70), kortare policytext, stängknapp
     * **Footer:** Mörk bakgrund (#060708), nya länkar (Integritetspolicy, Användarvillkor, LinkedIn)
     * **Design:** Accentfärg uppdaterad till #00FFC6, brödtext #EAEAEA, rubriker #FFFFFF
-    * **Tema:** Permanent mörkt läge (dark class på html)
+    * **Tema:** Permanent mörkt läge (dark class på html med inline critical CSS)
 
 ## 👤 Kontakt
 - E-post: info@belleminds.ai
