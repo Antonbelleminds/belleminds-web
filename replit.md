@@ -63,6 +63,13 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - Flexibla layouter med CSS Grid och Flexbox
 - Mobilanpassade navigationsknappar
 
+### Innehållshantering
+- **Centraliserad content fil:** All text och innehåll finns i `lib/content.ts`
+- **Enkel redigering:** Uppdatera texter på ett ställe utan att röra komponentkod
+- **Strukturerat innehåll:** Organiserat per sektion (header, hero, platform, contact, etc.)
+- **TypeScript-stöd:** Automatisk komplettering och felkontroll vid redigering
+- **Komponenter som använder content.ts:** Header, Hero, WhyBelleminds, Platform2026, BelleSectionAI, TechBehind, Inspiration, Contact, Footer
+
 ## 📁 Projektstruktur
 ```
 /
@@ -88,8 +95,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 │   ├── page.tsx
 │   └── globals.css
 ├── lib/
+│   ├── content.ts (Centraliserad innehållsfil för all text)
 │   ├── db.ts (PostgreSQL connection pooling)
-│   └── init-db.ts (Database initialization)
+│   ├── init-db.ts (Database initialization)
+│   └── resend-client.ts (E-postintegration via Resend)
 ├── public/
 │   └── brand/
 │       ├── logo.png (Belleminds logotyp)
@@ -133,6 +142,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 - ✅ AI-sektionsbilder integrerade (dashboard laptop, mobil, kalender)
 - ✅ Neon PostgreSQL databas integrerad (Azure Frankfurt, EU)
 - ✅ Kontaktformulär sparar data säkert med TLS-kryptering
+- ✅ Centraliserad innehållshantering (lib/content.ts) för enkel textredigering
 
 ## 🎯 Nästa Steg (Framtida Utveckling)
 1. Lägg till admin-gränssnitt för att visa och hantera kontaktförfrågningar
@@ -140,6 +150,14 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 3. Publicera på Cloudflare
 
 ## 📅 Projekthistorik
+- **2025-10-30:** Centraliserad innehållshantering
+  - **Content Management System:**
+    * Skapade lib/content.ts med all text och innehåll strukturerat per sektion
+    * Uppdaterade alla 10 komponenter att använda centraliserad content (Header, Hero, WhyBelleminds, Platform2026, BelleSectionAI, TechBehind, Inspiration, Contact, Footer)
+    * Möjliggör enkel textredigering på ett ställe utan att röra komponentkod
+    * TypeScript-stöd ger automatisk komplettering och felkontroll vid redigering
+    * Inga hårdkodade texter kvar i komponenter (förutom tekniska labels/aria-labels)
+
 - **2025-10-30:** E-postintegration och deployment-konfiguration
   - **E-postintegration:**
     * Integrerat Resend för att skicka kontaktformulär via e-post till info@belleminds.ai
