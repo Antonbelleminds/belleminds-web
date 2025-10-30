@@ -34,9 +34,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 5. **BelleSectionAI** – Interaktiv flik-sektion (id="platform") med tre flikar med ikoner: "Dina AI-resurser" (CRM, e-signering, ekonomi), "Din AI-agent" (personlig assistent), "Frigör tid" (automatisering). Aktiv flik med #00FFC6 accentlinje, fade-transitions vid byte, utökade texter med konkreta exempel
 6. **TechBehind** – Säkerhet & Efterlevnad (id="tech"), ikoner istället för checkboxar, 6 features (AI-Act-klar, EU-hostad drift, GDPR-granskad 2025, HTTPS & DDoS-skydd, Ingen spårning, Zero cookies), underrubrik "Säkerhet och integritet är kärnan i allt vi bygger"
 7. **Privacy** – Kompakt GDPR-modal med mörk overlay (bg-black/70), mörk bakgrund (gray-900), kortare policytext (4-5 stycken), stängknapp (×) uppe till höger
+7b. **Terms** – Ansvarsbegränsningar-modal med 8 sektioner: Allmänt, Ingen garanti för riktighet, Användarens ansvar, Begränsning av ansvar, Tredjepartsintegrationer, Tillgänglighet och drift, Ändringar av ansvarsbegränsningarna, Kontakt
 8. **Inspiration** – Ny rubrik "Inspiration & Lärande" (id="inspiration"), tre innehållskort (Blogg, Podd, Guide) med ikoner och "Läs mer"-CTA, sekundär LinkedIn-länk
 9. **Contact** – GDPR-compliant formulär (id="contact"), fält: Namn*, E-post*, Företag (frivilligt), Meddelande*, consent checkbox*, knapptext "Skicka meddelande", data sparas i Neon PostgreSQL (Azure Frankfurt)
-10. **Footer** – Mörk bakgrund (#060708), logotyp + copyright vänster, länkar till höger (Integritetspolicy, Användarvillkor, LinkedIn-ikon med text)
+10. **Footer** – Mörk bakgrund (#060708), logotyp + copyright vänster, länkar till höger (Integritetspolicy, Ansvarsbegränsningar, LinkedIn-ikon med text)
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies
@@ -74,6 +75,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 │   │   ├── Platform2026.tsx
 │   │   ├── TechBehind.tsx
 │   │   ├── Privacy.tsx
+│   │   ├── Terms.tsx
 │   │   ├── Inspiration.tsx
 │   │   ├── Contact.tsx
 │   │   ├── Footer.tsx
@@ -148,6 +150,10 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
     * Lagt till företagsfält (frivilligt)
     * Backend validerar consent och sparar data i EU-databasen
     * Felhantering på både frontend och backend
+  - **Ansvarsbegränsningar:**
+    * Skapat ny Terms.tsx-komponent med fullständiga ansvarsbegränsningar
+    * Ändrat "Användarvillkor" till "Ansvarsbegränsningar" i Footer
+    * 8 sektioner med tydliga begränsningar av ansvar och tredjepartsintegrationer
   - **Buggfixar:**
     * Fixat text-spacing i WhyBelleminds-sektionen
     * Fixat "vit blinkning" vid HMR/Fast Refresh genom inline critical CSS

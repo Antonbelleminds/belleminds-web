@@ -4,9 +4,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Privacy } from './Privacy';
+import { Terms } from './Terms';
 
 export function Footer() {
   const [privacyOpen, setPrivacyOpen] = useState(false);
+  const [termsOpen, setTermsOpen] = useState(false);
 
   return (
     <footer className="bg-[#060708] py-12 px-6">
@@ -41,10 +43,10 @@ export function Footer() {
               Integritetspolicy
             </button>
             <button
-              onClick={() => setPrivacyOpen(true)}
+              onClick={() => setTermsOpen(true)}
               className="text-gray-300 hover:text-[#00FFC6] transition-colors"
             >
-              Användarvillkor
+              Ansvarsbegränsningar
             </button>
             <a
               href="https://www.linkedin.com/company/belleminds/?viewAsMember=true"
@@ -62,6 +64,7 @@ export function Footer() {
       </div>
 
       <Privacy isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+      <Terms isOpen={termsOpen} onClose={() => setTermsOpen(false)} />
     </footer>
   );
 }
