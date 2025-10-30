@@ -9,7 +9,7 @@ export function WhyBelleminds() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="why" ref={ref} className="py-12 px-6 bg-[#0B0C10]">
+    <section id="why" ref={ref} className="py-20 px-6 bg-[#0B0C10]">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

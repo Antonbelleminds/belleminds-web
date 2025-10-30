@@ -29,7 +29,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 ### Komponenter
 1. **Header** – Transparent blur-bakgrund, logotyp vänster, navigationslänkar i mitten ("Om oss", "Plattform 2026", "Säkerhet", "Inspiration"), "Kontakta oss"-knapp höger, aktiva länkar markerade med #00FFC6, responsiv hamburger-meny för mobil
 2. **Hero** – Huvudsektion med gradient-bakgrund (from-[#001F1D] to-[#0B0C10]), logotyp, rubrik "En ny typ av plattform – byggd med AI" (ingen beskrivande text), CTA "Utforska plattformen" + sekundär "Kontakta oss"
-3. **WhyBelleminds** – Förklaring av varför Belleminds skapades (id="why" för navigation), reducerad padding (py-12) för minskat avstånd till nästa sektion
+3. **WhyBelleminds** – Förklaring av varför Belleminds skapades (id="why" för navigation)
 4. **Platform2026** – Rubrik "Plattform 2026" och ny text: "Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – med AI som tänker, planerar och agerar med dig. Som att ha tillgång till ekonomi, juridik och rådgivning när du behöver det – utan personal eller externa kostnader."
 5. **BelleSectionAI** – Interaktiv flik-sektion (id="platform") med tre flikar med ikoner: "Dina AI-resurser" (CRM, e-signering, ekonomi), "Din AI-agent" (personlig assistent), "Frigör tid" (automatisering). Aktiv flik med #00FFC6 accentlinje, fade-transitions vid byte, utökade texter med konkreta exempel
 6. **TechBehind** – Säkerhet & Efterlevnad (id="tech"), 4 boxar med gradient-bakgrund (from-gray-900 to-gray-800), hover-effekt med ljusare gradient (from-gray-800 to-gray-700), beskrivningar döljs som standard och visas vid hover med fade-in animation (opacity-0 → opacity-100), boxar: "GDPR-klar", "EU-hostad drift", "Säker kommunikation", "Dataintegritet", 2x2 grid på desktop, 1x4 på mobil, underrubrik "Säkerhet och integritet är kärnan i allt vi bygger"
@@ -143,7 +143,6 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - **Innehållsändringar:**
     * Platform 2026-texten uppdaterad: ny beskrivning fokuserar på AI som tänker, planerar och agerar med dig
     * Hero-sektionen förenklad: tagit bort beskrivande text under rubriken
-    * Reducerat avstånd mellan "Varför vi bygger Belleminds" och "Plattform 2026" (py-20 → py-12)
   - **Navigationändringar:**
     * "Teknologi" bytt till "Säkerhet" i header-menyn
   - **Designändringar:**
