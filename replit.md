@@ -27,7 +27,7 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Interactive image switching med fade/scale transitions i BelleSectionAI
 
 ### Komponenter
-1. **Header** – Transparent blur-bakgrund, logotyp vänster, navigationslänkar i mitten ("Om oss", "Plattform 2026", "Säkerhet", "Inspiration"), "Kontakta oss"-knapp höger, aktiva länkar markerade med #00FFC6, responsiv hamburger-meny för mobil
+1. **Header** – Transparent blur-bakgrund, logotyp + "belleminds"-text (Space Grotesk font) vänster, navigationslänkar i mitten ("Om oss", "Plattform 2026", "Säkerhet", "Inspiration"), "Kontakta oss"-knapp höger, aktiva länkar markerade med #00FFC6, responsiv hamburger-meny för mobil
 2. **Hero** – Huvudsektion med gradient-bakgrund (from-[#001F1D] to-[#0B0C10]), logotyp, rubrik "En ny typ av plattform – byggd med AI" (ingen beskrivande text), CTA "Utforska plattformen" + sekundär "Kontakta oss"
 3. **WhyBelleminds** – Förklaring av varför Belleminds skapades (id="why" för navigation)
 4. **Platform2026** – Rubrik "Plattform 2026" och ny text: "Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – med AI som tänker, planerar och agerar med dig. Som att ha tillgång till ekonomi, juridik och rådgivning när du behöver det – utan personal eller externa kostnader."

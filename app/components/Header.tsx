@@ -73,7 +73,7 @@ export function Header() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               whileHover={{ scale: 1.05 }}
-              className="flex items-center"
+              className="flex items-center gap-3"
             >
               <div className="w-10 h-10 relative">
                 <Image
@@ -85,6 +85,9 @@ export function Header() {
                   className="object-contain"
                 />
               </div>
+              <span className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
+                belleminds
+              </span>
             </motion.a>
 
             {/* Desktop Navigation */}
