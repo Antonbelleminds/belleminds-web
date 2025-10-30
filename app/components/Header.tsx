@@ -81,7 +81,8 @@ export function Header() {
                   alt="Belleminds"
                   fill
                   sizes="40px"
-                  className="dark:invert object-contain"
+                  style={{ filter: 'invert(1) brightness(1.8)' }}
+                  className="object-contain"
                 />
               </div>
             </motion.a>

@@ -24,7 +24,7 @@ export function Footer() {
               alt="Belleminds"
               width={40}
               height={40}
-              className="invert"
+              style={{ filter: 'invert(1) brightness(1.8)' }}
             />
             <div>
               <span className="text-lg font-bold text-white block" style={{ fontFamily: 'var(--font-heading)' }}>

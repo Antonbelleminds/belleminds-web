@@ -44,8 +44,8 @@ export function Hero() {
             width={200}
             height={200}
             priority
-            style={{ width: 'auto', height: 'auto' }}
-            className="relative z-10 drop-shadow-2xl dark:invert"
+            style={{ width: 'auto', height: 'auto', filter: 'invert(1) brightness(1.8)' }}
+            className="relative z-10 drop-shadow-2xl"
           />
         </motion.div>
 
