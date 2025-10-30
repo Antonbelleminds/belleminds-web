@@ -32,15 +32,6 @@ export function WhyBelleminds() {
           Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, 
           konkret och roligt – för dig som vill ta nästa steg.
         </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-12 flex justify-center"
-        >
-          <div className="w-32 h-32 bg-gradient-to-br from-accent to-primary rounded-full blur-2xl opacity-30" />
-        </motion.div>
       </div>
     </section>
   );
