@@ -27,9 +27,8 @@ export function Platform2026() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-lg md:text-xl text-[#EAEAEA] text-center max-w-3xl mx-auto leading-relaxed"
         >
-          Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva 
-          ditt företag – inte bara i molnet, utan med intelligens. Det ska kännas som att du har 
-          hela teamet på plats: juridik, relationer, ekonomi och analys – men utan att behöva anställa någon.
+          Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – med AI som tänker, planerar och agerar med dig.
+          Som att ha tillgång till ekonomi, juridik och rådgivning när du behöver det – utan personal eller externa kostnader.
         </motion.p>
       </div>
     </section>

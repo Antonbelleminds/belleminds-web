@@ -28,7 +28,7 @@ export function Footer() {
             />
             <div>
               <span className="text-lg font-bold text-white block" style={{ fontFamily: 'var(--font-heading)' }}>
-                Belleminds
+                belleminds
               </span>
               <span className="text-sm text-gray-400">© 2025 Alla rättigheter förbehållna</span>
             </div>

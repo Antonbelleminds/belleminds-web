@@ -7,7 +7,7 @@ import Image from 'next/image';
 const navItems = [
   { name: 'Om oss', href: '#why' },
   { name: 'Plattform 2026', href: '#platform' },
-  { name: 'Teknologi', href: '#tech' },
+  { name: 'Säkerhet', href: '#tech' },
   { name: 'Inspiration', href: '#inspiration' },
 ];
 

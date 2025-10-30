@@ -53,20 +53,11 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-6"
+          className="text-4xl md:text-6xl font-bold text-white mb-12"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           En ny typ av plattform – byggd med AI
         </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-[#EAEAEA] mb-12 max-w-3xl mx-auto leading-relaxed"
-        >
-          Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – inte bara i molnet, utan med intelligens. Det ska kännas som att du har hela teamet på plats: juridik, relationer, ekonomi och analys – utan att behöva anställa någon.
-        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

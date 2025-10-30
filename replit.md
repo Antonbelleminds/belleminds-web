@@ -27,17 +27,17 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
   - Interactive image switching med fade/scale transitions i BelleSectionAI
 
 ### Komponenter
-1. **Header** – Transparent blur-bakgrund, logotyp vänster, navigationslänkar i mitten ("Om oss", "Plattform 2026", "Teknologi", "Inspiration"), "Kontakta oss"-knapp höger, aktiva länkar markerade med #00FFC6, responsiv hamburger-meny för mobil
-2. **Hero** – Huvudsektion med gradient-bakgrund (from-[#001F1D] to-[#0B0C10]), logotyp, ny rubrik "En ny typ av plattform – byggd med AI", längre beskrivande text, CTA "Utforska plattformen" + sekundär "Kontakta oss"
-3. **WhyBelleminds** – Förklaring av varför Belleminds skapades (id="why" för navigation)
-4. **Platform2026** – Rubrik "Plattform 2026" och beskrivning
+1. **Header** – Transparent blur-bakgrund, logotyp vänster, navigationslänkar i mitten ("Om oss", "Plattform 2026", "Säkerhet", "Inspiration"), "Kontakta oss"-knapp höger, aktiva länkar markerade med #00FFC6, responsiv hamburger-meny för mobil
+2. **Hero** – Huvudsektion med gradient-bakgrund (from-[#001F1D] to-[#0B0C10]), logotyp, rubrik "En ny typ av plattform – byggd med AI" (ingen beskrivande text), CTA "Utforska plattformen" + sekundär "Kontakta oss"
+3. **WhyBelleminds** – Förklaring av varför Belleminds skapades (id="why" för navigation), reducerad padding (py-12) för minskat avstånd till nästa sektion
+4. **Platform2026** – Rubrik "Plattform 2026" och ny text: "Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag – med AI som tänker, planerar och agerar med dig. Som att ha tillgång till ekonomi, juridik och rådgivning när du behöver det – utan personal eller externa kostnader."
 5. **BelleSectionAI** – Interaktiv flik-sektion (id="platform") med tre flikar med ikoner: "Dina AI-resurser" (CRM, e-signering, ekonomi), "Din AI-agent" (personlig assistent), "Frigör tid" (automatisering). Aktiv flik med #00FFC6 accentlinje, fade-transitions vid byte, utökade texter med konkreta exempel
-6. **TechBehind** – Säkerhet & Efterlevnad (id="tech"), ikoner istället för checkboxar, 6 features (AI-Act-klar, EU-hostad drift, GDPR-granskad 2025, HTTPS & DDoS-skydd, Ingen spårning, Zero cookies), underrubrik "Säkerhet och integritet är kärnan i allt vi bygger"
+6. **TechBehind** – Säkerhet & Efterlevnad (id="tech"), 4 boxar med gradient-bakgrund (from-gray-900 to-gray-800), hover-effekt med ljusare gradient (from-gray-800 to-gray-700), beskrivningar döljs som standard och visas vid hover med fade-in animation (opacity-0 → opacity-100), boxar: "GDPR-klar", "EU-hostad drift", "Säker kommunikation", "Dataintegritet", 2x2 grid på desktop, 1x4 på mobil, underrubrik "Säkerhet och integritet är kärnan i allt vi bygger"
 7. **Privacy** – Kompakt GDPR-modal med mörk overlay (bg-black/70), mörk bakgrund (gray-900), kortare policytext (4-5 stycken), stängknapp (×) uppe till höger
 7b. **Terms** – Ansvarsbegränsningar-modal med 8 sektioner: Allmänt, Ingen garanti för riktighet, Användarens ansvar, Begränsning av ansvar, Tredjepartsintegrationer, Tillgänglighet och drift, Ändringar av ansvarsbegränsningarna, Kontakt
 8. **Inspiration** – Ny rubrik "Inspiration & Lärande" (id="inspiration"), tre innehållskort (Blogg, Podd, Guide) med ikoner och "Kommer snart"-CTA, sekundär LinkedIn-länk
 9. **Contact** – GDPR-compliant formulär (id="contact"), fält: Namn*, E-post*, Företag (frivilligt), Meddelande*, consent checkbox*, knapptext "Skicka meddelande", data sparas i Neon PostgreSQL (Azure Frankfurt)
-10. **Footer** – Mörk bakgrund (#060708), logotyp + copyright vänster, länkar till höger (Integritetspolicy, Ansvarsbegränsningar, LinkedIn-ikon med text)
+10. **Footer** – Mörk bakgrund (#060708), logotyp + "belleminds" (litet b) + copyright vänster, länkar till höger (Integritetspolicy, Ansvarsbegränsningar, LinkedIn-ikon med text)
 
 ### GDPR & Säkerhet
 - ✅ Inga cookies
@@ -139,6 +139,26 @@ Komplett, GDPR-säker lanseringssida för **Belleminds** – en AI-plattform fö
 4. Publicera på Cloudflare
 
 ## 📅 Projekthistorik
+- **2025-10-30:** Innehållsuppdateringar och UX-förbättringar
+  - **Innehållsändringar:**
+    * Platform 2026-texten uppdaterad: ny beskrivning fokuserar på AI som tänker, planerar och agerar med dig
+    * Hero-sektionen förenklad: tagit bort beskrivande text under rubriken
+    * Reducerat avstånd mellan "Varför vi bygger Belleminds" och "Plattform 2026" (py-20 → py-12)
+  - **Navigationändringar:**
+    * "Teknologi" bytt till "Säkerhet" i header-menyn
+  - **Designändringar:**
+    * Footer visar nu "belleminds" med litet b
+- **2025-10-30:** Neon PostgreSQL integration, säkerhetssektionuppdatering och Turbopack-buggfix
+  - **Säkerhetssektionuppdatering:**
+    * Ersatt gamla 6 features med 4 nya boxar med utförliga beskrivningar
+    * Nya boxar: GDPR-klar, EU-hostad drift, Säker kommunikation, Dataintegritet
+    * Gradient-bakgrund (from-gray-900 to-gray-800) med hover-effekt (from-gray-800 to-gray-700)
+    * Beskrivningar döljs som standard, visas vid hover med fade-in animation
+    * Responsivt grid (2x2 desktop, 1x4 mobil)
+  - **Turbopack-buggfix:**
+    * Fixat kritiskt Turbopack-internt fel (inner_of_uppers_lost_follower) som orsakade servern att krascha
+    * Rensat alla Next.js cache-filer (.next, node_modules/.cache, /tmp/next-*)
+    * Servern körs nu stabilt utan återkommande Internal Server Error
 - **2025-10-30:** Neon PostgreSQL integration och säkerhetsförbättringar
   - **Databasintegration:**
     * Integrerat Neon PostgreSQL (Azure Frankfurt) för EU-compliant datalagring
