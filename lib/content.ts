@@ -25,7 +25,7 @@ export const content = {
   whyBelleminds: {
     title: 'Varför vi bygger Belleminds',
     description:
-      'Små företag står inför samma utmaningar som stora, men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och mod. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.',
+      'Små företag står inför samma utmaningar som stora, men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och att våga tänka stort med hjälp av icke mänsklig intelligens. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.',
   },
 
   // PLATFORM 2026 - Plattformsbeskrivning
@@ -46,7 +46,7 @@ export const content = {
         title: 'Dina AI-resurser',
         heading: 'Allt du behöver, samlat på ett ställe.',
         description:
-          'Få tillgång till alla dina AI-verktyg och resurser i en gemensam plattform. CRM för att hålla koll på dina kunder, e-signering för snabba avtal, samt ekonomi- och analysverktyg som ger dig full översikt. Sömlös integration med dina befintliga system.',
+          'Få tillgång till alla dina AI-verktyg och resurser i en gemensam plattform. CRM för att hålla koll på dina kunder, e-signering för snabba avtal, samt ekonomi och analysverktyg som ger dig full översikt. Sömlös integration med dina befintliga system.',
         image: '/brand/ai-resources.png',
       },
       {
