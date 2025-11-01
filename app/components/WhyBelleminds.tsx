@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
@@ -21,7 +21,6 @@ export function WhyBelleminds() {
         >
           {content.whyBelleminds.title}
         </motion.h2>
-
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
