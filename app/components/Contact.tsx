@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { content } from '@/lib/content';
+import { Privacy } from './Privacy';
 
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', consent: false });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ export function Contact() {
       if (response.ok) {
         setStatus('success');
         alert('Tack! Ditt meddelande har skickats.');
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', consent: false });
         setTimeout(() => setStatus('idle'), 3000);
       } else {
         setStatus('error');
@@ -119,11 +121,41 @@ export function Contact() {
             />
           </div>
 
+          {/* GDPR Consent */}
+          <div className="bg-gray-800/50 rounded-lg p-4 space-y-3 border border-gray-700">
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                required
+                checked={formData.consent}
+                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                className="mt-1 w-5 h-5 rounded border-gray-600 text-accent focus:ring-accent focus:ring-2"
+              />
+              <label htmlFor="consent" className="text-sm text-white">
+                Jag godkänner att mina uppgifter behandlas enligt GDPR. *
+              </label>
+            </div>
+            <p className="text-xs text-[#EAEAEA] pl-8">
+              Läs mer i vår{' '}
+              <button
+                type="button"
+                onClick={() => setPrivacyOpen(true)}
+                className="text-[#00FFC6] hover:underline font-medium"
+              >
+                integritetspolicy
+              </button>
+              . Vi delar aldrig din data med tredje part.
+            </p>
+          </div>
+          
+          <Privacy isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
+
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            disabled={status === 'sending'}
+            disabled={status === 'sending' || !formData.consent}
             className="w-full px-8 py-4 bg-accent hover:bg-accent/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
             {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
