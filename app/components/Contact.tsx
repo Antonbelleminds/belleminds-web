@@ -18,7 +18,10 @@ export function Contact() {
     setStatus('sending');
 
     try {
-      const response = await fetch('/api/contact', {
+      const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+      const apiUrl = `${apiBaseUrl}/api/contact`;
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
