@@ -3,6 +3,7 @@ import { query } from "@/lib/db";
 import { initDatabase } from "@/lib/init-db";
 import { getUncachableResendClient } from "@/lib/resend-client";
 
+// 📩 POST – används av kontaktformuläret
 export async function POST(request: Request) {
   try {
     await initDatabase();
@@ -42,9 +43,30 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error);
+    console.error("❌ POST error:", error);
     return NextResponse.json(
       { error: "Ett fel inträffade. Försök igen." },
+      { status: 500 },
+    );
+  }
+}
+
+// 🧪 GET – temporär testfunktion för att verifiera Resend i production
+export async function GET() {
+  try {
+    const { client, fromEmail } = await getUncachableResendClient();
+    const result = await client.emails.send({
+      from: fromEmail,
+      to: ["info@belleminds.ai"],
+      subject: "✅ Testmail från Belleminds (production)",
+      text: "Detta är ett test för att bekräfta att Resend-mejl fungerar i production.",
+    });
+
+    return NextResponse.json({ success: true, result });
+  } catch (error) {
+    console.error("❌ GET test error:", error);
+    return NextResponse.json(
+      { success: false, error: (error as Error).message },
       { status: 500 },
     );
   }
