@@ -5,16 +5,6 @@ import { getUncachableResendClient } from '@/lib/resend-client';
 
 let dbInitialized = false;
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin': 'https://www.belleminds.ai',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
-};
-
-export async function OPTIONS() {
-  return NextResponse.json({}, { headers: corsHeaders });
-}
-
 export async function POST(request: Request) {
   try {
     if (!dbInitialized) {
@@ -28,14 +18,14 @@ export async function POST(request: Request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Namn, e-post och meddelande är obligatoriska' },
-        { status: 400, headers: corsHeaders }
+        { status: 400 }
       );
     }
 
     if (!consent) {
       return NextResponse.json(
         { error: 'Du måste godkänna GDPR-villkoren för att skicka meddelandet' },
-        { status: 400, headers: corsHeaders }
+        { status: 400 }
       );
     }
 
@@ -99,13 +89,13 @@ export async function POST(request: Request) {
         message: 'Tack för ditt meddelande! Vi återkommer till dig inom kort.',
         id: result.rows[0].id 
       },
-      { status: 200, headers: corsHeaders }
+      { status: 200 }
     );
   } catch (error) {
     console.error('Contact form database error:', error);
     return NextResponse.json(
       { error: 'Ett fel uppstod vid inlämning av formuläret. Försök igen senare.' },
-      { status: 500, headers: corsHeaders }
+      { status: 500 }
     );
   }
 }

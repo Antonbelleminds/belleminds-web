@@ -41,7 +41,7 @@ I prefer clear, concise summaries. Focus on high-level features and architectura
 
 ### System Design Choices
 - **Development Server:** Binds to `0.0.0.0:5000` for Replit compatibility.
-- **Production Deployment:** Configured for autoscale deployment, supporting cross-origin deployment where frontend is static and backend runs on a separate Replit server. CORS is correctly configured for secure communication.
+- **Production Deployment:** Configured for autoscale deployment on Replit with custom domain (www.belleminds.ai). Both frontend and backend API routes run on the same deployment server.
 - **Database:** Neon PostgreSQL (Azure Frankfurt, EU) with `pg` client and connection pooling for optimal performance and EU data compliance.
 
 ## External Dependencies
