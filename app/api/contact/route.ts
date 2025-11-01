@@ -3,6 +3,9 @@ import { query } from "@/lib/db";
 import { initDatabase } from "@/lib/init-db";
 import { getUncachableResendClient } from "@/lib/resend-client";
 
+// 👇 Lägg till denna rad för att tvinga Next.js att behandla route:en som dynamisk
+export const dynamic = "force-dynamic";
+
 // 📩 POST – används av kontaktformuläret
 export async function POST(request: Request) {
   try {
@@ -41,11 +44,16 @@ export async function POST(request: Request) {
       text: `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nMessage: ${message}`,
     });
 
+    console.log("✅ Kontaktformulär inskickat och mejl skickat!");
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("❌ POST error:", error);
     return NextResponse.json(
-      { error: "Ett fel inträffade. Försök igen." },
+      {
+        error:
+          "Ett fel inträffade vid försök att spara eller skicka meddelandet.",
+        details: (error as Error).message,
+      },
       { status: 500 },
     );
   }
@@ -62,6 +70,7 @@ export async function GET() {
       text: "Detta är ett test för att bekräfta att Resend-mejl fungerar i production.",
     });
 
+    console.log("✅ Testmail skickat via GET:", result.id);
     return NextResponse.json({ success: true, result });
   } catch (error) {
     console.error("❌ GET test error:", error);
