@@ -36,7 +36,7 @@ I prefer clear, concise summaries. Focus on high-level features and architectura
     - **BelleSectionAI:** Interactive tabbed section with icons and detailed descriptions for "Dina AI-resurser," "Din AI-agent," and "Frigör tid."
     - **TechBehind:** Four gradient-backed boxes detailing "GDPR-klar," "EU-hostad drift," "Säker kommunikation," and "Dataintegritet" with hover-revealed descriptions.
     - **Privacy/Terms Modals:** Compact modals for GDPR policy and terms of service.
-    - **Contact:** GDPR-compliant form with required fields, consent checkbox, and secure data handling.
+    - **Contact:** GDPR-compliant form with required fields, consent checkbox, and secure data handling. All submissions are stored in the EU-hosted PostgreSQL database and can be viewed in the Database panel.
     - **Footer:** Dark background, logo, copyright, and links.
 
 ### System Design Choices
@@ -53,4 +53,3 @@ I prefer clear, concise summaries. Focus on high-level features and architectura
 - **Neon PostgreSQL:** Cloud-native PostgreSQL database (Azure Frankfurt, EU).
 - **`pg`:** Node.js PostgreSQL client.
 - **Cloudflare:** For HTTPS and DDoS protection.
-- **Resend:** Email API for sending contact form submissions.
