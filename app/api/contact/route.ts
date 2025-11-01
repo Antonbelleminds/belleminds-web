@@ -37,7 +37,7 @@ export async function POST(request: Request) {
       [name, email, company, message, consent, ipAddress, userAgent]
     );
 
-    console.log('✅ Kontakt sparad i EU-databasen (Azure Frankfurt):', {
+    console.log('✅ Kontakt sparad i databasen:', {
       id: result.rows[0].id,
       name: name,
       email: email,
@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     });
 
   } catch (error) {
-    console.error('❌ Kontaktformulär-fel:', error);
+    console.error('❌ Fel:', error);
     return NextResponse.json(
       { 
         error: 'Ett fel uppstod. Försök igen senare.',
