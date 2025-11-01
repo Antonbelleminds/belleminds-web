@@ -25,16 +25,16 @@ export const content = {
   whyBelleminds: {
     title: 'Varför vi bygger Belleminds',
     description:
-      'Små företag står inför samma utmaningar som stora, men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och att våga tänka stort med hjälp av icke mänsklig intelligens. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.\n\nVisionen är enkel: Vi hjälper företagare och framtida entreprenörer att starta, driva och förädla sin verksamhet med AI eller som vi kallar det, icke mänsklig intellens!',
+      'Små företag står inför samma utmaningar som stora men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och att våga tänka stort med hjälp av icke mänsklig intelligens. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.\n\nVisionen är enkel: Vi hjälper företagare och framtida entreprenörer att starta, driva och förädla sin verksamhet med AI eller som vi kallar det, icke mänsklig intellens!',
   },
 
   // PLATFORM 2026 - Plattformsbeskrivning
   platform2026: {
     title: 'Plattform 2026 – en ny sorts företagsstöd',
     paragraphs: [
-      'Under 2026 lanserar vi nästa steg: en intelligent plattform som hjälper dig att driva ditt företag med AI som tänker, planerar och agerar tillsammans med dig.',
+      'Under 2026 lanserar vi nästa steg - en intelligent plattform som hjälper dig att driva ditt företag med AI som tänker, planerar och agerar tillsammans med dig.',
       'Tänk dig att ha tillgång till rådgivning, ekonomi, kundinsikt och juridik när du behöver det, utan kostnader för personal eller konsulter.',
-      'Belleminds blir din vardagsparter, alltid tillgänglig, alltid uppdaterad.',
+      'Belleminds blir din vardagspartner; alltid tillgänglig, alltid uppdaterad.',
     ],
   },
 
@@ -125,7 +125,7 @@ export const content = {
   contact: {
     title: 'Hör av dig!',
     subtitle:
-      'Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi snabbt.',
+      'Vill du veta mer, samarbeta eller bli pilotkund? Skicka ett meddelande så återkommer vi inom kort.',
     form: {
       nameLabel: 'Namn *',
       emailLabel: 'E-postadress *',
