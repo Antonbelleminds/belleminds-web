@@ -36,13 +36,13 @@ I prefer clear, concise summaries. Focus on high-level features and architectura
     - **BelleSectionAI:** Interactive tabbed section with icons and detailed descriptions for "Dina AI-resurser," "Din AI-agent," and "Frigör tid."
     - **TechBehind:** Four gradient-backed boxes detailing "GDPR-klar," "EU-hostad drift," "Säker kommunikation," and "Dataintegritet" with hover-revealed descriptions.
     - **Privacy/Terms Modals:** Compact modals for GDPR policy and terms of service.
-    - **Contact:** GDPR-compliant form with required fields, consent checkbox, and secure data handling. All submissions are stored in the EU-hosted PostgreSQL database and can be viewed in the Database panel.
+    - **Contact:** Simple client-side form with name, email, and message fields. Submissions are sent directly to Formspree (https://formspree.io/f/mwpwwjqg) which delivers emails to info@belleminds.ai. No backend routes or database storage required.
     - **Footer:** Dark background, logo, copyright, and links.
 
 ### System Design Choices
 - **Development Server:** Binds to `0.0.0.0:5000` for Replit compatibility.
-- **Production Deployment:** Configured for autoscale deployment on Replit with custom domain (www.belleminds.ai). Both frontend and backend API routes run on the same deployment server.
-- **Database:** Neon PostgreSQL (Azure Frankfurt, EU) with `pg` client and connection pooling for optimal performance and EU data compliance.
+- **Production Deployment:** Configured for autoscale deployment on Replit with custom domain (www.belleminds.ai).
+- **Email Delivery:** Contact form uses Formspree (client-side) to send emails to info@belleminds.ai, no backend email infrastructure required.
 
 ## External Dependencies
 - **Next.js:** Web framework.
@@ -50,6 +50,5 @@ I prefer clear, concise summaries. Focus on high-level features and architectura
 - **Tailwind CSS:** Utility-first CSS framework.
 - **Framer Motion:** Animation library.
 - **Google Fonts:** For Space Grotesk and Inter fonts.
-- **Neon PostgreSQL:** Cloud-native PostgreSQL database (Azure Frankfurt, EU).
-- **`pg`:** Node.js PostgreSQL client.
+- **Formspree:** Client-side email service for contact form submissions to info@belleminds.ai.
 - **Cloudflare:** For HTTPS and DDoS protection.

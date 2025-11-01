@@ -3,38 +3,43 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Privacy } from './Privacy';
 import { content } from '@/lib/content';
 
 export function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [formData, setFormData] = useState({ name: '', email: '', company: '', message: '', consent: false });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-  const [privacyOpen, setPrivacyOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('sending');
 
+    const form = new FormData();
+    form.append('name', formData.name);
+    form.append('email', formData.email);
+    form.append('message', formData.message);
+
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/mwpwwjqg', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: form,
+        headers: {
+          Accept: 'application/json',
+        },
       });
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', company: '', message: '', consent: false });
-        setTimeout(() => setStatus('idle'), 5000);
+        alert('Tack! Ditt meddelande har skickats.');
+        setFormData({ name: '', email: '', message: '' });
+        setTimeout(() => setStatus('idle'), 3000);
       } else {
-        const errorData = await response.json();
-        console.error('Form submission error:', errorData);
         setStatus('error');
         setTimeout(() => setStatus('idle'), 5000);
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }
@@ -71,11 +76,12 @@ export function Contact() {
         >
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-white mb-2">
-              {content.contact.form.nameLabel}
+              Namn *
             </label>
             <input
               type="text"
               id="name"
+              name="name"
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -85,11 +91,12 @@ export function Contact() {
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-white mb-2">
-              {content.contact.form.emailLabel}
+              E-post *
             </label>
             <input
               type="email"
               id="email"
+              name="email"
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -98,24 +105,12 @@ export function Contact() {
           </div>
 
           <div>
-            <label htmlFor="company" className="block text-sm font-medium text-white mb-2">
-              {content.contact.form.companyLabel}
-            </label>
-            <input
-              type="text"
-              id="company"
-              value={formData.company}
-              onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
-            />
-          </div>
-
-          <div>
             <label htmlFor="message" className="block text-sm font-medium text-white mb-2">
-              {content.contact.form.messageLabel}
+              Meddelande *
             </label>
             <textarea
               id="message"
+              name="message"
               required
               rows={5}
               value={formData.message}
@@ -124,69 +119,32 @@ export function Contact() {
             />
           </div>
 
-          {/* GDPR Consent */}
-          <div className="bg-gray-800/50 rounded-lg p-4 space-y-3 border border-gray-700">
-            <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                id="consent"
-                required
-                checked={formData.consent}
-                onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
-                className="mt-1 w-5 h-5 rounded border-gray-600 text-accent focus:ring-accent focus:ring-2"
-              />
-              <label htmlFor="consent" className="text-sm text-white">
-                {content.contact.form.consentLabel}
-              </label>
-            </div>
-            <p className="text-xs text-[#EAEAEA] pl-8">
-              Läs mer i vår{' '}
-              <button
-                type="button"
-                onClick={() => setPrivacyOpen(true)}
-                className="text-[#00FFC6] hover:underline font-medium"
-              >
-                {content.contact.form.privacyLinkText}
-              </button>
-              . {content.contact.form.consentText}
-            </p>
-          </div>
-          
-          <Privacy isOpen={privacyOpen} onClose={() => setPrivacyOpen(false)} />
-
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            disabled={status === 'sending' || !formData.consent}
+            disabled={status === 'sending'}
             className="w-full px-8 py-4 bg-accent hover:bg-accent/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
-            {status === 'sending' ? content.contact.form.sendingButton : content.contact.form.submitButton}
+            {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
           </motion.button>
-
-          {status === 'success' && (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-green-600 dark:text-green-400 text-center"
-            >
-              {content.contact.form.successMessage}
-            </motion.p>
-          )}
 
           {status === 'error' && (
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              className="text-red-600 dark:text-red-400 text-center"
+              className="text-red-400 text-center"
             >
-              {content.contact.form.errorMessage}
+              Ett fel uppstod. Försök igen senare.
             </motion.p>
           )}
         </motion.form>
 
         <p className="text-center text-[#EAEAEA] mt-8">
-          {content.contact.directContact.label} <a href={`mailto:${content.contact.directContact.email}`} className="text-[#00FFC6] hover:underline">{content.contact.directContact.email}</a>
+          Eller maila oss direkt på{' '}
+          <a href="mailto:info@belleminds.ai" className="text-[#00FFC6] hover:underline">
+            info@belleminds.ai
+          </a>
         </p>
       </div>
     </section>
