@@ -1,82 +1,61 @@
-import { NextResponse } from "next/server";
-import { query } from "@/lib/db";
-import { initDatabase } from "@/lib/init-db";
-import { getUncachableResendClient } from "@/lib/resend-client";
+import { NextResponse } from 'next/server';
+import { query } from '@/lib/db';
+import { initDatabase } from '@/lib/init-db';
 
-// 👇 Lägg till denna rad för att tvinga Next.js att behandla route:en som dynamisk
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
-// 📩 POST – används av kontaktformuläret
 export async function POST(request: Request) {
   try {
     await initDatabase();
+    
     const { name, email, company, message, consent } = await request.json();
 
-    if (!name || !email || !message || consent !== true) {
+    if (!name || !email || !message) {
       return NextResponse.json(
-        {
-          error:
-            "Namn, e-postadress, meddelande och samtycke är obligatoriska.",
-        },
-        { status: 400 },
+        { error: 'Namn, e-post och meddelande är obligatoriska' },
+        { status: 400 }
       );
     }
 
-    const ipHeader =
-      request.headers.get("x-forwarded-for") ||
-      request.headers.get("x-real-ip") ||
-      "";
-    const ipAddress = ipHeader.split(",")[0].trim().slice(0, 45);
-    const userAgent = request.headers.get("user-agent") || "";
+    if (!consent) {
+      return NextResponse.json(
+        { error: 'Du måste godkänna GDPR-villkoren' },
+        { status: 400 }
+      );
+    }
 
-    await query(
-      `INSERT INTO contact_submissions (name, email, company, message, consent, consent_timestamp, created_at, ip_address, user_agent)
-       VALUES ($1, $2, $3, $4, $5, NOW(), NOW(), $6, $7)`,
-      [name, email, company, message, consent, ipAddress, userAgent],
+    const ipHeader = request.headers.get('x-forwarded-for') || 
+                     request.headers.get('x-real-ip') || '';
+    const ipAddress = ipHeader.split(',')[0].trim().slice(0, 45);
+    const userAgent = request.headers.get('user-agent') || '';
+
+    const result = await query(
+      `INSERT INTO contact_submissions 
+        (name, email, company, message, consent, consent_timestamp, created_at, ip_address, user_agent)
+       VALUES ($1, $2, $3, $4, $5, NOW(), NOW(), $6, $7)
+       RETURNING id, created_at`,
+      [name, email, company, message, consent, ipAddress, userAgent]
     );
 
-    const { client, fromEmail } = await getUncachableResendClient();
-
-    await client.emails.send({
-      from: fromEmail,
-      to: ["info@belleminds.ai"],
-      subject: "Nytt meddelande från Belleminds kontaktsida",
-      text: `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nMessage: ${message}`,
+    console.log('✅ Kontakt sparad i EU-databasen:', {
+      id: result.rows[0].id,
+      email: email,
     });
 
-    console.log("✅ Kontaktformulär inskickat och mejl skickat!");
-    return NextResponse.json({ success: true });
+    return NextResponse.json({
+      success: true,
+      message: 'Tack för ditt meddelande! Vi återkommer till dig inom kort.',
+      id: result.rows[0].id
+    });
+
   } catch (error) {
-    console.error("❌ POST error:", error);
+    console.error('❌ Kontaktformulär-fel:', error);
     return NextResponse.json(
-      {
-        error:
-          "Ett fel inträffade vid försök att spara eller skicka meddelandet.",
-        details: (error as Error).message,
+      { 
+        error: 'Ett fel uppstod. Försök igen senare.',
+        details: (error as Error).message
       },
-      { status: 500 },
-    );
-  }
-}
-
-// 🧪 GET – temporär testfunktion för att verifiera Resend i production
-export async function GET() {
-  try {
-    const { client, fromEmail } = await getUncachableResendClient();
-    const result = await client.emails.send({
-      from: fromEmail,
-      to: ["info@belleminds.ai"],
-      subject: "✅ Testmail från Belleminds (production)",
-      text: "Detta är ett test för att bekräfta att Resend-mejl fungerar i production.",
-    });
-
-    console.log("✅ Testmail skickat via GET:", result.id);
-    return NextResponse.json({ success: true, result });
-  } catch (error) {
-    console.error("❌ GET test error:", error);
-    return NextResponse.json(
-      { success: false, error: (error as Error).message },
-      { status: 500 },
+      { status: 500 }
     );
   }
 }
