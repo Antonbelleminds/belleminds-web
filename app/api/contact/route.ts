@@ -93,8 +93,17 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error('Contact form database error:', error);
+    console.error('Error details:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : undefined,
+      DATABASE_URL_exists: !!process.env.DATABASE_URL,
+      DATABASE_URL_prefix: process.env.DATABASE_URL?.substring(0, 20) + '...',
+    });
     return NextResponse.json(
-      { error: 'Ett fel uppstod vid inlämning av formuläret. Försök igen senare.' },
+      { 
+        error: 'Ett fel uppstod vid inlämning av formuläret. Försök igen senare.',
+        details: process.env.NODE_ENV === 'development' ? (error instanceof Error ? error.message : 'Unknown error') : undefined
+      },
       { status: 500 }
     );
   }
