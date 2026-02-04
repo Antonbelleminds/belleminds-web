@@ -18,21 +18,21 @@ export function Footer() {
           {/* Logo and Copyright */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-3"
+            className="flex flex-col gap-2"
           >
-            <Image
-              src="/brand/logo.png"
-              alt="Belleminds"
-              width={40}
-              height={40}
-              style={{ filter: 'invert(1) brightness(1.8)' }}
-            />
-            <div>
-              <span className="text-lg font-bold text-white block" style={{ fontFamily: 'var(--font-heading)' }}>
+            <div className="flex items-center gap-2">
+              <Image
+                src="/brand/logo.png"
+                alt="Belleminds"
+                width={32}
+                height={32}
+                className="object-contain brightness-0 invert flex-shrink-0"
+              />
+              <span className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
                 {content.footer.brandName}
               </span>
-              <span className="text-sm text-gray-400">{content.footer.copyright}</span>
             </div>
+            <span className="text-sm text-gray-400 pl-10">{content.footer.copyright}</span>
           </motion.div>
 
           {/* Links */}

@@ -4,11 +4,13 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { content } from '@/lib/content';
+import { AboutModal } from './AboutModal';
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const [showAbout, setShowAbout] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +33,14 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href: string, itemName: string) => {
+    // Om det är "Om oss", öppna modal istället
+    if (itemName === 'Om oss') {
+      setShowAbout(true);
+      setMobileMenuOpen(false);
+      return;
+    }
+    
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -57,7 +66,7 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6">
-        <div className="rounded-full bg-black/20 backdrop-blur-md shadow-lg transition-all duration-300">
+        <div className="rounded-full bg-white/90 backdrop-blur-md shadow-lg transition-all duration-300">
           <div className="flex items-center justify-between px-6 py-4">
             {/* Logo */}
             <motion.a
@@ -67,19 +76,16 @@ export function Header() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
               whileHover={{ scale: 1.05 }}
-              className="flex items-center gap-3"
+              className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 relative">
-                <Image
-                  src="/brand/logo.png"
-                  alt="Belleminds"
-                  fill
-                  sizes="40px"
-                  style={{ filter: 'invert(1) brightness(1.8)' }}
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
+              <Image
+                src="/brand/logo.png"
+                alt="Belleminds"
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+              <span className="text-xl font-black text-black" style={{ fontFamily: 'var(--font-heading)', fontWeight: 900, color: '#000000' }}>
                 {content.header.brandName}
               </span>
             </motion.a>
@@ -92,15 +98,21 @@ export function Header() {
                   href={item.href}
                   onClick={(e) => {
                     e.preventDefault();
-                    scrollToSection(item.href);
+                    scrollToSection(item.href, item.name);
                   }}
-                  whileHover={{ scale: 1.05 }}
-                  className={`font-medium transition-colors ${
+                  whileHover={{ 
+                    scale: 1.05,
+                    textShadow: '0 0 20px rgba(0, 184, 143, 0.8), 0 0 40px rgba(0, 184, 143, 0.4)'
+                  }}
+                  className={`font-medium transition-all ${
                     activeSection === item.href
-                      ? 'text-[#00FFC6]'
-                      : 'text-gray-300 hover:text-[#00FFC6]'
+                      ? 'text-[#00B88F]'
+                      : 'text-gray-700 hover:text-[#00B88F]'
                   }`}
-                  style={{ fontFamily: 'var(--font-body)' }}
+                  style={{ 
+                    fontFamily: 'var(--font-body)',
+                    textShadow: activeSection === item.href ? '0 0 20px rgba(0, 184, 143, 0.8), 0 0 40px rgba(0, 184, 143, 0.4)' : 'none'
+                  }}
                 >
                   {item.name}
                 </motion.a>
@@ -113,7 +125,7 @@ export function Header() {
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="hidden md:block bg-accent text-dark-bg px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
+                className="hidden md:block bg-accent text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition-opacity"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {content.header.ctaButton}
@@ -122,7 +134,7 @@ export function Header() {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2 text-gray-300"
+                className="md:hidden p-2 text-gray-700"
                 aria-label="Toggle menu"
               >
                 <svg
@@ -152,7 +164,7 @@ export function Header() {
                 animate={{ opacity: 1, height: 'auto' }}
                 exit={{ opacity: 0, height: 0 }}
                 transition={{ duration: 0.3 }}
-                className="md:hidden overflow-hidden border-t border-gray-700"
+                className="md:hidden overflow-hidden border-t border-gray-200"
               >
                 <nav className="px-6 py-4 space-y-3">
                   {content.header.navigation.map((item) => (
@@ -161,21 +173,24 @@ export function Header() {
                       href={item.href}
                       onClick={(e) => {
                         e.preventDefault();
-                        scrollToSection(item.href);
+                        scrollToSection(item.href, item.name);
                       }}
-                      className={`block font-medium py-2 transition-colors ${
+                      className={`block font-medium py-2 transition-all ${
                         activeSection === item.href
-                          ? 'text-[#00FFC6]'
-                          : 'text-gray-300 hover:text-[#00FFC6]'
+                          ? 'text-[#00B88F]'
+                          : 'text-gray-700 hover:text-[#00B88F]'
                       }`}
-                      style={{ fontFamily: 'var(--font-body)' }}
+                      style={{ 
+                        fontFamily: 'var(--font-body)',
+                        textShadow: activeSection === item.href ? '0 0 20px rgba(0, 184, 143, 0.8), 0 0 40px rgba(0, 184, 143, 0.4)' : 'none'
+                      }}
                     >
                       {item.name}
                     </a>
                   ))}
                   <button
                     onClick={scrollToContact}
-                    className="w-full bg-accent text-dark-bg px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
+                    className="w-full bg-accent text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {content.header.ctaButton}
@@ -186,6 +201,8 @@ export function Header() {
           </AnimatePresence>
         </div>
       </div>
+
+      <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
     </motion.header>
   );
 }

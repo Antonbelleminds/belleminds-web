@@ -6,10 +6,10 @@ export const content = {
   header: {
     brandName: 'belleminds',
     navigation: [
-      { name: 'Om oss', href: '#why' },
-      { name: 'Plattform 2026', href: '#platform' },
-      { name: 'Säkerhet', href: '#tech' },
+      { name: 'Vision', href: '#bellebook' },
       { name: 'Inspiration', href: '#inspiration' },
+      { name: 'Kontakt', href: '#contact' },
+      { name: 'Om oss', href: '#why' },
     ],
     ctaButton: 'Kontakta oss',
   },
@@ -26,6 +26,76 @@ export const content = {
     title: 'Varför vi bygger Belleminds',
     description:
       'Små företag står inför samma utmaningar som stora men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och att våga tänka stort med hjälp av icke mänsklig intelligens. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.\n\nVisionen är enkel: Vi hjälper företagare och framtida entreprenörer att starta, driva och förädla sin verksamhet med AI eller som vi kallar det, icke mänsklig intelligens!',
+  },
+
+  // BELLEBOOK - Första produkten
+  bellebook: {
+    headline: 'Bellebook – AI-driven affärshjärna',
+    subline: 'För bokningsföretag som vill växa smartare',
+    taglines: [
+      'Din AI-partner för smarta bokningar',
+      'Automatiserar det tråkiga, maximerar det viktiga',
+      'Se mer, gör mer, väx mer'
+    ],
+    investorPitch: 'Belleminds bygger AI-verktyg för småföretag. Vi börjar med Bellebook – en AI-driven affärshjärna för bokningsföretag som ser möjligheter, automatiserar administration och ökar intäkterna. Nästa steg är Plattform 2026 – där AI blir din vardagspartner för rådgivning, ekonomi, juridik, HR, försäljning m.m.',
+    benefits: [
+      {
+        title: 'Ser vad du missar',
+        description: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
+      },
+      {
+        title: 'Agerar proaktivt',
+        description: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
+      },
+      {
+        title: 'Automatiserar administration',
+        description: 'Sköter all pappersarbete så du kan fokusera på det som verkligen betyder något.',
+      },
+    ],
+  },
+
+  // SKALA - Marketing Hub
+  skala: {
+    headline: 'Skala – AI-driven marknadsföring',
+    subline: 'Nå rätt kunder, vid rätt tidpunkt – med AI',
+    taglines: [
+      'Automatisera din marknadsföring med AI',
+      'Från idé till lansering på 10 minuter',
+      'Datadrivna beslut, färdiga playbooks'
+    ],
+    description: 'Automatisera din marknadsföring med AI-genererade kampanjer, datadrivna insights och färdiga playbooks. Från idé till lansering på 10 minuter.',
+    benefits: [
+      {
+        title: 'Real-time insights och AI-förslag',
+        description: 'Belle visar vilka kunder du bör kontakta och varför – med konkreta inlåtberäkningar.',
+      },
+      {
+        title: 'Snabbutskick',
+        description: 'SMS eller e-post på 60 sekunder direkt från hubben.',
+      },
+      {
+        title: 'Prestanda-rapporter och analytics',
+        description: 'Se öppningsgrad, konvertering och ROI för alla dina kampanjer samlat.',
+      },
+      {
+        title: 'Målgruppshantering',
+        description: 'Översikt av alla målgrupper och aktiva kampanjer på ett ställe.',
+      },
+    ],
+    stats: [
+      {
+        value: '1,247',
+        label: 'Totalt kunder',
+      },
+      {
+        value: '~67k',
+        label: 'kr potential',
+      },
+      {
+        value: '12',
+        label: 'Aktiva kampanjer',
+      },
+    ],
   },
 
   // PLATFORM 2026 - Plattformsbeskrivning
@@ -148,7 +218,7 @@ export const content = {
   // FOOTER
   footer: {
     brandName: 'belleminds',
-    copyright: '© 2025 Alla rättigheter förbehållna',
+    copyright: '© 2026 Alla rättigheter förbehållna',
     links: {
       privacy: 'Integritetspolicy',
       terms: 'Ansvarsbegränsningar',

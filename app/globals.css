@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004B4F;
-  --color-accent: #00FFC6;
+  --color-primary: #00B88F;
+  --color-accent: #004B4F;
   --color-light-bg: #F9FAFB;
   --color-dark-bg: #0B0C10;
 }
@@ -24,6 +24,7 @@ body {
 
 .bg-accent {
   background-color: var(--color-accent);
+  box-shadow: 0 0 20px rgba(0, 75, 79, 0.4);
 }
 
 .bg-light-bg {
@@ -40,14 +41,16 @@ body {
 
 .text-accent {
   color: var(--color-accent);
+  text-shadow: 0 0 20px rgba(0, 75, 79, 0.6), 0 0 40px rgba(0, 75, 79, 0.3);
 }
 
 .hover\:bg-primary\/90:hover {
-  background-color: rgb(0 75 79 / 0.9);
+  background-color: rgb(0 184 143 / 0.9);
 }
 
 .hover\:bg-accent\/90:hover {
-  background-color: rgb(0 255 198 / 0.9);
+  background-color: rgb(0 75 79 / 0.9);
+  box-shadow: 0 0 30px rgba(0, 75, 79, 0.5), 0 0 60px rgba(0, 75, 79, 0.2);
 }
 
 h1, h2, h3, h4, h5, h6 {

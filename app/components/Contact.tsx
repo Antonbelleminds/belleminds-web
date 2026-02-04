@@ -48,7 +48,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 px-6 bg-[#0B0C10]">
+    <section id="contact" ref={ref} className="py-20 px-6 bg-accent">
       <div className="max-w-2xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -87,7 +87,7 @@ export function Contact() {
               required
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-primary/20 border border-primary/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
             />
           </div>
 
@@ -102,7 +102,7 @@ export function Contact() {
               required
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-primary/20 border border-primary/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
             />
           </div>
 
@@ -117,12 +117,12 @@ export function Contact() {
               rows={5}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:ring-2 focus:ring-accent focus:border-transparent transition-colors resize-none"
+              className="w-full px-4 py-3 rounded-lg bg-primary/20 border border-primary/30 text-white placeholder:text-white/60 focus:ring-2 focus:ring-primary focus:border-transparent transition-colors resize-none"
             />
           </div>
 
           {/* GDPR Consent */}
-          <div className="bg-gray-800/50 rounded-lg p-4 space-y-3 border border-gray-700">
+          <div className="bg-primary/10 rounded-lg p-4 space-y-3 border border-primary/20">
             <div className="flex items-start gap-3">
               <input
                 type="checkbox"
@@ -136,12 +136,12 @@ export function Contact() {
                 Jag godkänner att mina uppgifter behandlas enligt GDPR. *
               </label>
             </div>
-            <p className="text-xs text-[#EAEAEA] pl-8">
+            <p className="text-xs text-white pl-8">
               Läs mer i vår{' '}
               <button
                 type="button"
                 onClick={() => setPrivacyOpen(true)}
-                className="text-[#00FFC6] hover:underline font-medium"
+                className="text-primary hover:underline font-medium"
               >
                 integritetspolicy
               </button>
@@ -156,7 +156,7 @@ export function Contact() {
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={status === 'sending' || !formData.consent}
-            className="w-full px-8 py-4 bg-accent hover:bg-accent/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-dark-bg rounded-full font-semibold text-lg transition-colors shadow-lg"
+            className="w-full px-8 py-4 bg-primary hover:bg-primary/90 disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-full font-semibold text-lg transition-colors shadow-lg"
           >
             {status === 'sending' ? 'Skickar...' : 'Skicka meddelande'}
           </motion.button>
@@ -172,9 +172,9 @@ export function Contact() {
           )}
         </motion.form>
 
-        <p className="text-center text-[#EAEAEA] mt-8">
+        <p className="text-center text-white mt-8">
           Eller maila oss direkt på{' '}
-          <a href="mailto:info@belleminds.ai" className="text-[#00FFC6] hover:underline">
+          <a href="mailto:info@belleminds.ai" className="text-primary hover:underline font-semibold">
             info@belleminds.ai
           </a>
         </p>
