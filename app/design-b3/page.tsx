@@ -13,7 +13,6 @@ import { TrustStrip } from '../components/TrustStrip';
 import { SanaInspiredShowcase } from '../components/SanaInspiredShowcase';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
-import { DesignSwitcher } from '../components/DesignSwitcher';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getContent } from '@/lib/i18n';
 import { motion, useInView } from 'framer-motion';
@@ -117,7 +116,6 @@ export default function DesignB3() {
         <Contact />
       </div>
       <Footer />
-      <DesignSwitcher />
     </main>
   );
 }

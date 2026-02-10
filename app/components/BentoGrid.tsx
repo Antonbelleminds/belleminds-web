@@ -21,7 +21,7 @@ export function BentoGrid({ items }: BentoGridProps) {
   return (
     <section ref={ref} className="py-12 md:py-24 px-4 md:px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 place-items-center md:max-w-5xl md:mx-auto">
           {items.map((item, index) => (
             <motion.div
               key={index}
@@ -29,9 +29,9 @@ export function BentoGrid({ items }: BentoGridProps) {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`
-                bg-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group
-                ${item.size === 'large' ? 'md:col-span-2' : ''}
-                ${index === 0 ? 'md:row-span-2' : ''}
+                bg-white rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-shadow border border-gray-100 group w-full
+                ${item.size === 'large' ? '' : ''}
+                ${index === 0 ? '' : ''}
               `}
             >
               <motion.div 
