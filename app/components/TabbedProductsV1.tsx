@@ -41,8 +41,8 @@ export function TabbedProductsV1() {
     minds: {
       title: 'Minds Platform',
       subtitle: 'Fullständig företagsplattform',
-      description: content.mindsplatform.title,
-      details: content.mindsplatform.paragraphs[0],
+      description: content.platform2026.title,
+      details: content.platform2026.paragraphs[0],
       features: [
         { title: 'AI-agent', description: 'Din personliga AI-assistent för företaget', icon: 'agent' },
         { title: 'Integrerade verktyg', description: 'CRM, ekonomi, juridik och e-signering på ett ställe', icon: 'tools' },

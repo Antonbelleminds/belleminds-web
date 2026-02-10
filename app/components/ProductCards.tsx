@@ -10,8 +10,8 @@ export function ProductCards() {
 
   const products = [
     {
-      title: content.bellebook.title,
-      description: content.bellebook.shortDescription,
+      title: content.bellebook.headline,
+      description: content.bellebook.subline,
       href: '#bellebook',
       icon: (
         <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -101,8 +101,14 @@ interface Translations {
   bentoGrid: {
     visionTitle: string;
     visionDescription: string;
+    seeWhatYouMissTitle: string;
+    seeWhatYouMissDescription: string;
+    actProactivelyTitle: string;
+    actProactivelyDescription: string;
     bellebookTitle: string;
     bellebookDescription: string;
+    gdprTitle: string;
+    gdprDescription: string;
   };
   trustStrip: {
     title: string;
@@ -424,8 +430,14 @@ export const translations: Record<Language, Translations> = {
     bentoGrid: {
       visionTitle: 'Varför vi bygger Belleminds',
       visionDescription: 'Små företag möter samma komplexitet som stora bolag – men utan samma tid, system eller resurser. Vi bygger Belleminds för att göra avancerad AI praktiskt användbar i vardagen.\n\nVår ambition är att ge företagare ett intelligent stöd som hjälper dem att fatta bättre beslut, frigöra tid och fokusera på det som faktiskt skapar värde i verksamheten.',
+      seeWhatYouMissTitle: 'Ser vad du missar',
+      seeWhatYouMissDescription: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
+      actProactivelyTitle: 'Agerar proaktivt',
+      actProactivelyDescription: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
       bellebookTitle: 'Bellebook – Din AI-partner',
       bellebookDescription: 'Bellebook är mer än ett bokningssystem. Det är ett intelligent affärsstöd som arbetar i bakgrunden varje dag.\n\nSystemet kopplar samman bokningar, kunder, personal och intäkter – och hjälper dig att förstå vad som händer i verksamheten och vad du bör göra härnäst. Mindre administration, bättre beslut och mer tid för ditt arbete.',
+      gdprTitle: 'GDPR-säker',
+      gdprDescription: 'All data lagras inom EU och är krypterad från början till slut. Din integritet är vår prioritet.',
     },
     trustStrip: {
       title: 'Trygg & säker hantering av din data',
@@ -857,8 +869,14 @@ export const translations: Record<Language, Translations> = {
     bentoGrid: {
       visionTitle: 'Why we build Belleminds',
       visionDescription: 'Small businesses face the same complexity as large corporations – but without the same time, systems or resources. We build Belleminds to make advanced AI practically useful in everyday operations.\n\nOur ambition is to provide business owners with intelligent support that helps them make better decisions, free up time and focus on what actually creates value in their business.',
+      seeWhatYouMissTitle: 'Sees what you miss',
+      seeWhatYouMissDescription: 'The AI analyzes your business 24/7 and finds opportunities you would otherwise miss.',
+      actProactivelyTitle: 'Acts proactively',
+      actProactivelyDescription: 'Takes initiative and performs tasks automatically before problems arise.',
       bellebookTitle: 'Bellebook – Your AI Partner',
       bellebookDescription: 'Bellebook is more than a booking system. It\'s an intelligent business support tool working in the background every day.\n\nThe system connects bookings, customers, staff and revenue – and helps you understand what\'s happening in your business and what you should do next. Less administration, better decisions and more time for your work.',
+      gdprTitle: 'GDPR-compliant',
+      gdprDescription: 'All data is stored within the EU and encrypted end-to-end. Your privacy is our priority.',
     },
     trustStrip: {
       title: 'Secure & safe data handling',

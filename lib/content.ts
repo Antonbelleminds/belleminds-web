@@ -32,6 +32,7 @@ export const content = {
   bellebook: {
     headline: 'Bellebook – AI-driven affärshjärna',
     subline: 'För bokningsföretag som vill växa smartare',
+    companyContext: 'Belleminds bygger AI-verktyg för småföretag. Vi börjar med Bellebook – en AI-driven affärshjärna för bokningsföretag som ser möjligheter, automatiserar administration och ökar intäkterna. Nästa steg är Plattform 2026 – där AI blir din vardagspartner för rådgivning, ekonomi, juridik, HR, försäljning m.m.',
     taglines: [
       'Din AI-partner för smarta bokningar',
       'Automatiserar det tråkiga, maximerar det viktiga',
