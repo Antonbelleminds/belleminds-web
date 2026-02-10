@@ -116,16 +116,46 @@ export function SanaInspiredShowcase() {
   // Touch handlers for mobile swipe
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const isSwiping = useRef(false);
+  const isMultiTouch = useRef(false);
 
   const handleTouchStart = (e: React.TouchEvent) => {
+    // Detect multi-touch (pinch-to-zoom) - don't swipe if 2+ fingers
+    if (e.touches.length > 1) {
+      isMultiTouch.current = true;
+      isSwiping.current = false;
+      return;
+    }
+    
+    isMultiTouch.current = false;
     touchStartX.current = e.touches[0].clientX;
+    isSwiping.current = true;
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    // Ignore if multi-touch or not swiping
+    if (isMultiTouch.current || !isSwiping.current) {
+      return;
+    }
+    
+    // If multi-touch detected during move, cancel swipe
+    if (e.touches.length > 1) {
+      isMultiTouch.current = true;
+      isSwiping.current = false;
+      return;
+    }
+    
     touchEndX.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = () => {
+    // Don't trigger slide change if it was multi-touch (pinch-zoom)
+    if (isMultiTouch.current || !isSwiping.current) {
+      isMultiTouch.current = false;
+      isSwiping.current = false;
+      return;
+    }
+    
     const diff = touchStartX.current - touchEndX.current;
     const threshold = 50; // minimum swipe distance
     
@@ -139,6 +169,8 @@ export function SanaInspiredShowcase() {
       }
       setProgress(0);
     }
+    
+    isSwiping.current = false;
   };
 
   return (
@@ -266,22 +298,26 @@ export function SanaInspiredShowcase() {
                 className="w-full"
               >
                 {tabs[activeTab].type === 'multi' ? (
-                  // Show all 3 phones side by side on mobile
-                  <div className="w-full px-4">
-                    <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                  // Show all 3 phones - LARGER on mobile with better spacing
+                  <div className="w-full px-2 sm:px-4">
+                    <div className="flex justify-center items-start gap-2 sm:gap-3 max-w-full overflow-x-auto pb-2">
                       {tabs[activeTab].images?.map((img, index) => (
-                        <div key={index} className="flex flex-col items-center">
-                          <div className="relative w-full bg-white rounded-xl sm:rounded-2xl shadow-lg p-1.5 sm:p-2 border-4 sm:border-6 border-gray-800">
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 sm:w-12 h-2 sm:h-3 bg-gray-800 rounded-b-lg sm:rounded-b-xl z-10"></div>
+                        <div key={index} className="flex flex-col items-center flex-shrink-0" style={{ width: 'calc(33.333% - 5px)', minWidth: '110px', maxWidth: '140px' }}>
+                          <div className="relative w-full bg-white rounded-xl sm:rounded-2xl shadow-lg p-2 sm:p-2.5 border-4 sm:border-5 border-gray-800">
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-10 sm:w-12 h-2.5 sm:h-3 bg-gray-800 rounded-b-lg sm:rounded-b-xl z-10"></div>
                             <div className="relative w-full aspect-[9/19.5] bg-white rounded-lg sm:rounded-xl overflow-hidden">
                               <Image
                                 src={img}
                                 alt={`${tabs[activeTab].label} ${index + 1}`}
                                 fill
                                 className="object-cover"
-                                quality={85}
-                                sizes="(max-width: 640px) 30vw, 200px"
+                                quality={90}
+                                sizes="(max-width: 640px) 35vw, 200px"
                                 loading="lazy"
+                                style={{ 
+                                  imageRendering: '-webkit-optimize-contrast',
+                                  touchAction: 'pan-x pan-y pinch-zoom'
+                                }}
                               />
                             </div>
                           </div>
@@ -302,6 +338,7 @@ export function SanaInspiredShowcase() {
                           quality={90}
                           sizes="(max-width: 768px) 95vw, 600px"
                           loading="lazy"
+                          style={{ touchAction: 'pan-x pan-y pinch-zoom' }}
                         />
                       </div>
                     </div>
