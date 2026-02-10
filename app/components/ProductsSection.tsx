@@ -9,8 +9,10 @@ import Image from 'next/image';
 export function ProductsSection() {
   const { language } = useLanguage();
   const content = getContent(language);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const mobileRef = useRef(null);
+  const desktopRef = useRef(null);
+  const isMobileInView = useInView(mobileRef, { once: true, margin: '-100px' });
+  const isDesktopInView = useInView(desktopRef, { once: true, margin: '-100px' });
 
   return (
     <>
@@ -19,7 +21,7 @@ export function ProductsSection() {
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
@@ -40,13 +42,13 @@ export function ProductsSection() {
       </div>
 
       {/* MOBILE VERSION - Clean stacked layout */}
-      <section className="md:hidden bg-white">
+      <section ref={mobileRef} className="md:hidden bg-white">
         {/* Product Cards - Normal Flow */}
         <div className="px-4 sm:px-6 py-6 sm:py-8 space-y-5 sm:space-y-6 max-w-2xl mx-auto">
           {/* Bellebook Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isMobileInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"
           >
@@ -81,7 +83,7 @@ export function ProductsSection() {
           {/* Minds Platform Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isMobileInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg"
           >
@@ -116,7 +118,7 @@ export function ProductsSection() {
       </section>
 
       {/* DESKTOP VERSION - Split image with overlay cards */}
-      <section id="products" ref={ref} className="hidden md:block relative py-32 overflow-hidden min-h-[800px]">
+      <section id="products" ref={desktopRef} className="hidden md:block relative py-32 overflow-hidden min-h-[800px]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -139,7 +141,7 @@ export function ProductsSection() {
               {/* Bellebook Card - Left */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative bg-white rounded-2xl p-5 border border-gray-200 transition-all hover:shadow-xl w-[350px] h-[280px] flex-shrink-0"
               >
@@ -184,7 +186,7 @@ export function ProductsSection() {
               {/* Minds Platform Card - Right */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="relative bg-white rounded-2xl p-5 border border-gray-200 transition-all hover:shadow-xl w-[350px] h-[280px] flex-shrink-0"
               >
