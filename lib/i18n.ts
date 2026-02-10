@@ -141,6 +141,7 @@ interface Translations {
     benefits: Array<{
       title: string;
       description: string;
+      icon: 'eye' | 'lightning' | 'repeat' | 'chart';
     }>;
   };
   skala: {
@@ -493,14 +494,17 @@ export const translations: Record<Language, Translations> = {
         {
           title: 'Ser vad du missar',
           description: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
+          icon: 'eye' as const,
         },
         {
           title: 'Agerar proaktivt',
           description: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
+          icon: 'lightning' as const,
         },
         {
           title: 'Automatiserar administration',
           description: 'Sköter all pappersarbete så du kan fokusera på det som verkligen betyder något.',
+          icon: 'repeat' as const,
         },
       ],
     },
@@ -932,14 +936,17 @@ export const translations: Record<Language, Translations> = {
         {
           title: 'Sees what you miss',
           description: 'The AI analyzes your business 24/7 and finds opportunities you would otherwise miss.',
+          icon: 'eye' as const,
         },
         {
           title: 'Acts proactively',
           description: 'Takes initiative and performs tasks automatically before problems arise.',
+          icon: 'lightning' as const,
         },
         {
           title: 'Automates administration',
           description: 'Handles all paperwork so you can focus on what really matters.',
+          icon: 'repeat' as const,
         },
       ],
     },
