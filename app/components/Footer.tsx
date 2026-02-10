@@ -17,7 +17,7 @@ export function Footer() {
   return (
     <footer className="bg-[#060708] py-6 md:py-12 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-3 md:gap-6">
           {/* Logo and Copyright */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
@@ -39,7 +39,7 @@ export function Footer() {
           </motion.div>
 
           {/* Links */}
-          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-6">
+          <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-4 md:gap-6">
             <button
               onClick={() => setPrivacyOpen(true)}
               className="text-gray-300 hover:text-[#00FFC6] transition-colors"
