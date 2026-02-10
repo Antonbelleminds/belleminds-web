@@ -2,9 +2,12 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { content } from '@/lib/content';
+import { getContent } from '@/lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function InvestorSection() {
+  const { language } = useLanguage();
+  const content = getContent(language);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 

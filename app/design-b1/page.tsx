@@ -1,3 +1,5 @@
+'use client';
+
 import { Header } from '../components/Header';
 import { MegaHeroV1 } from '../components/MegaHeroV1';
 import { BentoGrid } from '../components/BentoGrid';
@@ -6,13 +8,16 @@ import { InvestorSection } from '../components/InvestorSection';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { DesignSwitcher } from '../components/DesignSwitcher';
-import { content } from '@/lib/content';
+import { useLanguage } from '../contexts/LanguageContext';
+import { getContent } from '@/lib/i18n';
 
 export default function DesignB1() {
+  const { language } = useLanguage();
+  const t = getContent(language);
   const bentoItems = [
     {
-      title: 'Varför vi bygger Belleminds',
-      description: 'Små företag står inför samma utmaningar som stora men utan samma resurser. Vi tror att framtiden tillhör de som vågar använda AI för att frigöra tid, energi och kreativitet. Belleminds är en plats för inspiration, vägledning och att våga tänka stort med hjälp av icke mänsklig intelligens. Här gör vi AI begripligt, konkret och roligt, för dig som vill ta nästa steg.\n\nVisionen är enkel: Vi hjälper företagare och framtida entreprenörer att starta, driva och förädla sin verksamhet med AI eller som vi kallar det, icke mänsklig intelligens!',
+      title: t.bentoGrid.visionTitle,
+      description: t.bentoGrid.visionDescription,
       size: 'large' as const,
       icon: (
         <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,8 +26,8 @@ export default function DesignB1() {
       )
     },
     {
-      title: 'Ser vad du missar',
-      description: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
+      title: t.bentoGrid.seeWhatYouMissTitle,
+      description: t.bentoGrid.seeWhatYouMissDescription,
       icon: (
         <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -31,8 +36,8 @@ export default function DesignB1() {
       )
     },
     {
-      title: 'Agerar proaktivt',
-      description: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
+      title: t.bentoGrid.actProactivelyTitle,
+      description: t.bentoGrid.actProactivelyDescription,
       icon: (
         <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -40,8 +45,8 @@ export default function DesignB1() {
       )
     },
     {
-      title: 'Bellebook – Första produkten',
-      description: 'AI-driven affärshjärna för bokningsföretag som automatiserar administration och ökar intäkterna.',
+      title: t.bentoGrid.bellebookTitle,
+      description: t.bentoGrid.bellebookDescription,
       size: 'large' as const,
       icon: (
         <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,8 +55,8 @@ export default function DesignB1() {
       )
     },
     {
-      title: 'GDPR-säker',
-      description: 'All data lagras inom EU och är krypterad från början till slut. Din integritet är vår prioritet.',
+      title: t.bentoGrid.gdprTitle,
+      description: t.bentoGrid.gdprDescription,
       icon: (
         <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
@@ -65,9 +70,9 @@ export default function DesignB1() {
       <Header />
       <MegaHeroV1 
         title="Belleminds"
-        subtitle="AI-verktyg för småföretag. Bellebook är vår första produkt."
-        primaryButton="Utforska"
-        secondaryButton="Kontakta oss"
+        subtitle={language === 'sv' ? 'AI-verktyg för småföretag. Bellebook är vår första produkt.' : 'AI tools for small businesses. Bellebook is our first product.'}
+        primaryButton={language === 'sv' ? 'Utforska' : 'Explore'}
+        secondaryButton={t.header.ctaButton}
       />
       
       <div id="bellebook">

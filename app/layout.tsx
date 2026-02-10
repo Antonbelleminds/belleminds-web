@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "./components/Header";
+import { LanguageProvider } from "./contexts/LanguageContext";
 
 const interHeading = Inter({
   variable: "--font-heading",
@@ -55,11 +55,12 @@ export default function RootLayout({
         }} />
       </head>
       <body
-        className={`${interHeading.variable} ${inter.variable} font-body antialiased`}
-        style={{ background: '#0B0C10', color: '#EAEAEA' }}
+        className={`${interHeading.variable} ${inter.variable} font-body antialiased overflow-x-hidden`}
+        style={{ background: '#0B0C10', color: '#EAEAEA', maxWidth: '100vw' }}
       >
-        <Header />
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

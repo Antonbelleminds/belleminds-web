@@ -3,10 +3,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { content } from '@/lib/content';
+import { getContent } from '@/lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
+import { LanguageSwitcher } from './LanguageSwitcher';
 import { AboutModal } from './AboutModal';
 
 export function Header() {
+  const { language } = useLanguage();
+  const content = getContent(language);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -34,8 +38,8 @@ export function Header() {
   }, []);
 
   const scrollToSection = (href: string, itemName: string) => {
-    // Om det är "Om oss", öppna modal istället
-    if (itemName === 'Om oss') {
+    // Om det är "Om oss" / "About us" (baserat på href #why), öppna modal istället
+    if (href === '#why') {
       setShowAbout(true);
       setMobileMenuOpen(false);
       return;
@@ -119,8 +123,11 @@ export function Header() {
               ))}
             </nav>
 
-            {/* Contact Button */}
+            {/* Language Switcher and Contact Button */}
             <div className="flex items-center gap-4">
+              <div className="hidden md:block">
+                <LanguageSwitcher />
+              </div>
               <motion.button
                 onClick={scrollToContact}
                 whileHover={{ scale: 1.05 }}
@@ -188,6 +195,9 @@ export function Header() {
                       {item.name}
                     </a>
                   ))}
+                  <div className="pt-2 pb-1 flex justify-center">
+                    <LanguageSwitcher />
+                  </div>
                   <button
                     onClick={scrollToContact}
                     className="w-full bg-accent text-white px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"

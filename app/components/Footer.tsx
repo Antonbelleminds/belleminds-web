@@ -5,20 +5,23 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { Privacy } from './Privacy';
 import { Terms } from './Terms';
-import { content } from '@/lib/content';
+import { getContent } from '@/lib/i18n';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export function Footer() {
+  const { language } = useLanguage();
+  const content = getContent(language);
   const [privacyOpen, setPrivacyOpen] = useState(false);
   const [termsOpen, setTermsOpen] = useState(false);
 
   return (
-    <footer className="bg-[#060708] py-12 px-6">
+    <footer className="bg-[#060708] py-6 md:py-12 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
           {/* Logo and Copyright */}
           <motion.div 
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col gap-2"
+            className="flex flex-col gap-1 md:gap-2"
           >
             <div className="flex items-center gap-2">
               <Image
@@ -28,15 +31,15 @@ export function Footer() {
                 height={32}
                 className="object-contain brightness-0 invert flex-shrink-0"
               />
-              <span className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
+              <span className="text-base md:text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
                 {content.footer.brandName}
               </span>
             </div>
-            <span className="text-sm text-gray-400 pl-10">{content.footer.copyright}</span>
+            <span className="text-xs md:text-sm text-gray-400 pl-10">{content.footer.copyright}</span>
           </motion.div>
 
           {/* Links */}
-          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 md:gap-6">
             <button
               onClick={() => setPrivacyOpen(true)}
               className="text-gray-300 hover:text-[#00FFC6] transition-colors"

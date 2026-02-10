@@ -11,7 +11,7 @@ export function DesignSwitcher() {
     { 
       id: 'b1', 
       name: 'B1', 
-      subtitle: 'Pulsating Glow • Mega Logo', 
+      subtitle: 'Original • Compact Nav', 
       href: '/design-b1', 
       color: '#3B82F6',
       icon: (
@@ -23,24 +23,36 @@ export function DesignSwitcher() {
     { 
       id: 'b2', 
       name: 'B2', 
-      subtitle: 'Float & Rotate • Mega Logo', 
+      subtitle: 'Dropdown Nav • With Investor', 
       href: '/design-b2', 
       color: '#2563EB',
       icon: (
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       )
     },
     { 
       id: 'b3', 
       name: 'B3', 
-      subtitle: 'Scale Pulse • Mega Logo', 
+      subtitle: 'Inline Nav • Merged Investor', 
       href: '/design-b3', 
       color: '#1D4ED8',
       icon: (
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
+        </svg>
+      )
+    },
+    { 
+      id: 'b4', 
+      name: 'B4', 
+      subtitle: 'Mega Menu • No Investor', 
+      href: '/design-b4', 
+      color: '#7C3AED',
+      icon: (
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" />
         </svg>
       )
     },

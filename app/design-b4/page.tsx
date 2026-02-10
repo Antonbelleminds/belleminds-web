@@ -1,6 +1,6 @@
 'use client';
 
-import { HeaderInline } from '../components/HeaderInline';
+import { HeaderMegaMenu } from '../components/HeaderMegaMenu';
 import { MegaHeroV1 } from '../components/MegaHeroV1';
 import { ProductsSection } from '../components/ProductsSection';
 import { WhyBellebookSection } from '../components/WhyBellebookSection';
@@ -9,17 +9,14 @@ import { IndustriesSection } from '../components/IndustriesSection';
 import { IntegrationsSection } from '../components/IntegrationsSection';
 import { RoadmapSection } from '../components/RoadmapSection';
 import { BentoGrid } from '../components/BentoGrid';
-import { TrustStrip } from '../components/TrustStrip';
 import { SanaInspiredShowcase } from '../components/SanaInspiredShowcase';
 import { Contact } from '../components/Contact';
 import { Footer } from '../components/Footer';
 import { DesignSwitcher } from '../components/DesignSwitcher';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getContent } from '@/lib/i18n';
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
 
-export default function DesignB3() {
+export default function DesignB4() {
   const { language } = useLanguage();
   const t = getContent(language);
 
@@ -35,6 +32,25 @@ export default function DesignB3() {
       )
     },
     {
+      title: t.bentoGrid.seeWhatYouMissTitle,
+      description: t.bentoGrid.seeWhatYouMissDescription,
+      icon: (
+        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+        </svg>
+      )
+    },
+    {
+      title: t.bentoGrid.actProactivelyTitle,
+      description: t.bentoGrid.actProactivelyDescription,
+      icon: (
+        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      )
+    },
+    {
       title: t.bentoGrid.bellebookTitle,
       description: t.bentoGrid.bellebookDescription,
       size: 'large' as const,
@@ -44,47 +60,20 @@ export default function DesignB3() {
         </svg>
       )
     },
+    {
+      title: t.bentoGrid.gdprTitle,
+      description: t.bentoGrid.gdprDescription,
+      icon: (
+        <svg className="w-12 h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        </svg>
+      )
+    },
   ];
-
-  // Merged Investor Section Component
-  function MergedInvestorSection() {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: '-100px' });
-
-    return (
-      <section ref={ref} className="py-20 px-6 bg-gradient-to-br from-slate-100 to-white">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-3xl p-10 md:p-16 border border-blue-100 shadow-xl"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              {/* Quote mark */}
-              <div className="absolute -top-4 -left-2 text-blue-600 text-6xl opacity-20 font-serif">"</div>
-              
-              <p className="text-xl md:text-2xl leading-relaxed pl-8 font-medium" style={{ color: '#000000' }}>
-                {t.bellebook.investorPitch}
-              </p>
-              
-              {/* Quote mark end */}
-              <div className="absolute -bottom-8 -right-2 text-blue-600 text-6xl opacity-20 font-serif">"</div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <main className="min-h-screen bg-white">
-      <HeaderInline />
+      <HeaderMegaMenu />
       <MegaHeroV1 
         title={t.hero.title}
         subtitle={t.hero.subtitle}
@@ -107,11 +96,6 @@ export default function DesignB3() {
       <div id="bellebook">
         <BentoGrid items={bentoItems} />
       </div>
-      
-      <TrustStrip 
-        title={t.trustStrip.title}
-        description={t.trustStrip.description}
-      />
       
       <div id="contact">
         <Contact />

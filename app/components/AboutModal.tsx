@@ -3,6 +3,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { getContent } from '@/lib/i18n';
 
 interface AboutModalProps {
   isOpen: boolean;
@@ -10,6 +12,9 @@ interface AboutModalProps {
 }
 
 export function AboutModal({ isOpen, onClose }: AboutModalProps) {
+  const { language } = useLanguage();
+  const t = getContent(language);
+  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -68,7 +73,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                       className="text-3xl font-semibold mb-10"
                       style={{ color: '#000000' }}
                     >
-                      Grundare & VD
+                      {t.aboutModal.role}
                     </p>
 
                     <div className="space-y-6">
@@ -76,21 +81,21 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                         className="text-xl leading-relaxed"
                         style={{ color: '#000000' }}
                       >
-                        Anton är grundaren bakom Belleminds och driver visionen om att göra AI tillgängligt för småföretag.
+                        {t.aboutModal.description1}
                       </p>
                       
                       <p 
                         className="text-xl leading-relaxed"
                         style={{ color: '#000000' }}
                       >
-                        Med passion för teknologi och entreprenörskap bygger Anton verktyg som verkligen gör skillnad för småföretagare.
+                        {t.aboutModal.description2}
                       </p>
 
                       <p 
                         className="italic text-lg"
                         style={{ color: '#666666' }}
                       >
-                        "Mer information kommer snart..."
+                        {t.aboutModal.comingSoon}
                       </p>
                     </div>
 
@@ -100,7 +105,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                         className="text-lg"
                         style={{ color: '#000000' }}
                       >
-                        Kontakt: <a href="mailto:anton@belleminds.ai" className="text-blue-600 hover:underline font-semibold">anton@belleminds.ai</a>
+                        {t.aboutModal.contactLabel} <a href="mailto:anton@belleminds.ai" className="text-blue-600 hover:underline font-semibold">anton@belleminds.ai</a>
                       </p>
                     </div>
                   </div>
