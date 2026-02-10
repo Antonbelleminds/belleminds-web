@@ -1,6 +1,8 @@
 // Centraliserad innehållsfil för Belleminds
 // Här kan du enkelt redigera alla texter på webbplatsen
 
+import type { ContentBellebook } from './types';
+
 export const content = {
   // HEADER - Navigation
   header: {
@@ -43,20 +45,20 @@ export const content = {
       {
         title: 'Ser vad du missar',
         description: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
-        icon: 'eye' as const,
+        icon: 'eye',
       },
       {
         title: 'Agerar proaktivt',
         description: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
-        icon: 'lightning' as const,
+        icon: 'lightning',
       },
       {
         title: 'Automatiserar administration',
         description: 'Sköter all pappersarbete så du kan fokusera på det som verkligen betyder något.',
-        icon: 'repeat' as const,
+        icon: 'repeat',
       },
     ],
-  },
+  } satisfies ContentBellebook,
 
   // SKALA - Marketing Hub
   skala: {

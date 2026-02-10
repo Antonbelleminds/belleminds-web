@@ -3,8 +3,9 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { content } from '@/lib/content';
+import type { IconType } from '@/lib/types';
 
-const iconMap = {
+const iconMap: Record<IconType, React.ReactElement> = {
   eye: (
     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -26,12 +27,6 @@ const iconMap = {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
     </svg>
   ),
-};
-
-type Benefit = {
-  title: string;
-  description: string;
-  icon: keyof typeof iconMap;
 };
 
 export function BellebookSection() {
@@ -61,7 +56,7 @@ export function BellebookSection() {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {(content.bellebook.benefits as Benefit[]).map((benefit, index) => (
+          {content.bellebook.benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
               initial={{ opacity: 0, y: 30 }}
