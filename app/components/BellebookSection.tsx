@@ -28,6 +28,12 @@ const iconMap = {
   ),
 };
 
+type Benefit = {
+  title: string;
+  description: string;
+  icon: keyof typeof iconMap;
+};
+
 export function BellebookSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -55,7 +61,7 @@ export function BellebookSection() {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {content.bellebook.benefits.map((benefit, index) => (
+          {(content.bellebook.benefits as Benefit[]).map((benefit, index) => (
             <motion.div
               key={benefit.title}
               initial={{ opacity: 0, y: 30 }}
@@ -64,7 +70,7 @@ export function BellebookSection() {
               className="bg-gray-800/50 rounded-xl p-8 border border-gray-700/50 shadow-lg hover:shadow-xl hover:border-[#00FFC6]/30 transition-all"
             >
               <div className="text-[#00FFC6] mb-4">
-                {iconMap[benefit.icon as keyof typeof iconMap]}
+                {iconMap[benefit.icon]}
               </div>
               <h3
                 className="text-2xl font-bold text-white mb-3"
