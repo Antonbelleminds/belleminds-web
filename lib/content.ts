@@ -42,14 +42,17 @@ export const content = {
       {
         title: 'Ser vad du missar',
         description: 'AI:n analyserar din verksamhet 24/7 och hittar möjligheter du annars skulle missa.',
+        icon: 'eye' as const,
       },
       {
         title: 'Agerar proaktivt',
         description: 'Tar initiativ och utför uppgifter automatiskt innan problem uppstår.',
+        icon: 'lightning' as const,
       },
       {
         title: 'Automatiserar administration',
         description: 'Sköter all pappersarbete så du kan fokusera på det som verkligen betyder något.',
+        icon: 'repeat' as const,
       },
     ],
   },
