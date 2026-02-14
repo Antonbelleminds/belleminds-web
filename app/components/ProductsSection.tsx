@@ -136,30 +136,30 @@ export function ProductsSection() {
 
         {/* Overlay Cards */}
         <div className="relative z-10 flex w-full justify-center items-center min-h-[800px]">
-          <div className="relative w-full max-w-[1200px] mx-auto px-4">
-            <div className="relative w-full h-[280px] flex items-center justify-between gap-8">
+          <div className="relative w-full max-w-[1400px] mx-auto px-4 xl:px-6">
+            <div className="relative w-full flex flex-wrap items-center justify-center gap-6 xl:gap-8 py-8">
               {/* Bellebook Card - Left */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative bg-white rounded-2xl p-5 border border-gray-200 transition-all hover:shadow-xl w-[350px] h-[280px] flex-shrink-0"
+                className="relative bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 transition-all hover:shadow-xl w-full md:w-[450px] lg:w-[500px] xl:w-[520px] min-h-[380px] lg:min-h-[400px]"
               >
-                <div className="absolute top-3 right-3">
-                  <span className="bg-accent text-white px-3 py-1 rounded-full text-xs font-bold">
+                <div className="absolute top-3 right-3 lg:top-4 lg:right-4">
+                  <span className="bg-accent text-white px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-bold">
                     Q2 2026
                   </span>
                 </div>
                 
-                <div className="flex items-start gap-2 mb-3">
+                <div className="flex items-start gap-2 lg:gap-3 mb-3 lg:mb-4">
                   <div className="text-accent">
-                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-8 h-8 lg:w-10 lg:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                     </svg>
                   </div>
                   <div>
                     <h3 
-                      className="text-xl font-bold mb-1"
+                      className="text-2xl lg:text-3xl font-bold mb-1"
                       style={{ fontFamily: 'var(--font-heading)', color: '#000000' }}
                     >
                       {content.products.bellebook.title}
@@ -167,17 +167,17 @@ export function ProductsSection() {
                   </div>
                 </div>
                 
-                <p className="text-sm mb-4 font-semibold leading-relaxed" style={{ color: '#000000' }}>
+                <p className="text-base lg:text-lg mb-4 lg:mb-6 font-semibold leading-relaxed" style={{ color: '#000000' }}>
                   {content.products.bellebook.description}
                 </p>
                 
-                <ul className="space-y-1.5">
+                <ul className="space-y-2 lg:space-y-3">
                   {content.products.bellebook.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <li key={index} className="flex items-start gap-2 lg:gap-3">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5 text-accent flex-shrink-0 mt-0.5 lg:mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span className="text-xs font-semibold" style={{ color: '#000000' }}>{feature}</span>
+                      <span className="text-sm lg:text-base font-semibold" style={{ color: '#000000' }}>{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -188,23 +188,23 @@ export function ProductsSection() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={isDesktopInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="relative bg-white rounded-2xl p-5 border border-gray-200 transition-all hover:shadow-xl w-[350px] h-[280px] flex-shrink-0"
+                className="relative bg-white rounded-2xl p-6 lg:p-8 border border-gray-200 transition-all hover:shadow-xl w-full md:w-[450px] lg:w-[500px] xl:w-[520px] min-h-[380px] lg:min-h-[400px]"
               >
-                <div className="absolute top-3 right-3">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#00826F' }}>
+                <div className="absolute top-3 right-3 lg:top-4 lg:right-4">
+                  <span className="px-3 py-1 lg:px-4 lg:py-1.5 rounded-full text-xs lg:text-sm font-bold text-white" style={{ backgroundColor: '#00826F' }}>
                     {content.products.mindsPlatform.badge}
                   </span>
                 </div>
 
-                <div className="flex items-start gap-2 mb-3">
+                <div className="flex items-start gap-2 lg:gap-3 mb-3 lg:mb-4">
                   <div className="text-accent">
-                    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg className="w-8 h-8 lg:w-10 lg:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
                   <div>
                     <h3 
-                      className="text-xl font-bold mb-1"
+                      className="text-2xl lg:text-3xl font-bold mb-1"
                       style={{ fontFamily: 'var(--font-heading)', color: '#000000' }}
                     >
                       {content.products.mindsPlatform.title}
@@ -212,17 +212,17 @@ export function ProductsSection() {
                   </div>
                 </div>
                 
-                <p className="text-sm mb-4 font-semibold leading-relaxed" style={{ color: '#000000' }}>
+                <p className="text-base lg:text-lg mb-4 lg:mb-6 font-semibold leading-relaxed" style={{ color: '#000000' }}>
                   {content.products.mindsPlatform.description}
                 </p>
                 
-                <ul className="space-y-1.5">
+                <ul className="space-y-2 lg:space-y-3">
                   {content.products.mindsPlatform.capabilities.map((capability, index) => (
-                    <li key={index} className="flex items-start gap-2">
-                      <svg className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <li key={index} className="flex items-start gap-2 lg:gap-3">
+                      <svg className="w-4 h-4 lg:w-5 lg:h-5 text-accent flex-shrink-0 mt-0.5 lg:mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                       </svg>
-                      <span className="text-xs font-semibold" style={{ color: '#000000' }}>{capability}</span>
+                      <span className="text-sm lg:text-base font-semibold" style={{ color: '#000000' }}>{capability}</span>
                     </li>
                   ))}
                 </ul>
